@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MatchScoringComponent } from "app/match-scoring/match-scoring.component";
-import { PageNotFoundComponent } from "app/page-not-found/page-not-found.component";
+import { MatchScoringComponent } from 'app/match-scoring/match-scoring.component';
+import { PageNotFoundComponent } from 'app/page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from "app/page-not-found/page-not-found.compone
       { path: 'match', component: MatchScoringComponent },
       { path: '**', component: PageNotFoundComponent }
     ]),
-  ]
+  ],
+  exports: [RouterModule]
 })
 export class AppRouterModule { }

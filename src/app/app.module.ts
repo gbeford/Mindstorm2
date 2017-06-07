@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material'
+import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 
@@ -12,7 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MatchScoringComponent } from './match-scoring/match-scoring.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { AppRouterModule } from "app/app-router.module";
+import { AppRouterModule } from './app-router.module';
 
 
 @NgModule({
