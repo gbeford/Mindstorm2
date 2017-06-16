@@ -33,3 +33,10 @@ label.control-label {
   font-weight: 600;
   color: #777;
 }
+
+.panel .category{
+  background-color:#337ab7;
+  padding-bottom: 10px;
+  color:whitesmoke;
+  padding-top: 5px;
+}

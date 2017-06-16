@@ -13,6 +13,7 @@ import { MatchScoringComponent } from './match-scoring/match-scoring.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { AppRouterModule } from './app-router.module';
+import { TeamListingComponent } from './team-listing/team-listing.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppRouterModule } from './app-router.module';
     AppComponent,
     MatchScoringComponent,
     PageNotFoundComponent,
-    MenuComponent
+    MenuComponent,
+    TeamListingComponent
   ],
   imports: [
     BrowserModule,
