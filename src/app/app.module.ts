@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
-import { RouterModule } from '@angular/router';
+//import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -28,8 +28,8 @@ import { AppRouterModule } from './app-router.module';
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRouterModule,
-   RouterModule
+    AppRouterModule
+    //RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
