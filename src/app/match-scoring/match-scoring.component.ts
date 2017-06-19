@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./match-scoring.component.css']
 })
 export class MatchScoringComponent implements OnInit {
-
+  title = 'Match';
   constructor() { }
 
   ngOnInit() {
