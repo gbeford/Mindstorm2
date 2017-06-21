@@ -4,7 +4,7 @@ import { MatchService } from './match.service';
 
 @Component({
   selector: 'app-match-scoring',
-  providers: [MatchService],
+  //providers: [MatchService],
   templateUrl: './match-scoring.component.html',
   styleUrls: ['./match-scoring.component.css']
  
@@ -13,12 +13,12 @@ import { MatchService } from './match.service';
 
 export class MatchScoringComponent implements OnInit {
   title = 'Match';
- public matchItem = {};
+// public matchItem = {};
 
 
   constructor(private _matchService: MatchService) { }
  
-  matchData = [];
+  // matchData = [];
 
 
   ngOnInit() {
