@@ -179,9 +179,9 @@
   </div>
 </div>-->
 
-<ul>
-  <li ng-template ="ngFor let teamList of teamLists">
-    {{user.fll_number}} - {{user.team_name}}
-  </li>
+<!--<div *ngFor="let teamList of teamLists; let i=index">
+  {{i + 1}} - {{teamList.fll_number}} - {{teamList.team_name}}
+</div>-->
+<ul *ngFor="let teamList of teamLists; let i=index" [attr.data-index]="i">
+  <li>{{teamList}}</li>
 </ul>
-
