@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { TeamList } from "app/team-listing/model/teamList";
+import { TeamList } from './model/TeamList';
 
 import { Observable } from 'rxjs/Observable';
 // Import RxJs required methods
@@ -19,11 +19,15 @@ export class TeamListingService {
     // Fetch all teams
     getTeamListAll(): Observable<TeamList[]> {
         // ...using get request
-        return this.http.get(this.url)
+        const comps = this.http.get(this.url)
             // ...and calling .json() on the response to return data
-            .map((res: Response) => res.json())
-            //...errors if any
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .map((res: Response) =>
+                res.json()
+                    .map(comp => comp.competition)
+            );
+        return comps;
+        // ...errors if any
+        // .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
     // Add a new comment
@@ -53,5 +57,5 @@ export class TeamListingService {
     //     return this.http.delete(`${this.commentsUrl}/${id}`) // ...using put request
     //         .map((res: Response) => res.json()) // ...and calling .json() on the response to return data
     //         .catch((error: any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
-    // }   
+    // }
 }

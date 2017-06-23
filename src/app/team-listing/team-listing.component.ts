@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamListingService } from './team-listing.service';
-import { TeamList } from "app/team-listing/model/teamList";
+import { TeamList } from './model/TeamList';
 
 @Component({
   selector: 'app-team-listing',
@@ -9,11 +9,11 @@ import { TeamList } from "app/team-listing/model/teamList";
   styleUrls: ['./team-listing.component.css']
 })
 export class TeamListingComponent implements OnInit {
+  teamList: TeamList[];
 
   constructor(private teamListService: TeamListingService) { }
 
   // Local properties
-  teamList: TeamList[];
 
   // Input properties
   // @Input() listId: string;
@@ -29,7 +29,7 @@ export class TeamListingComponent implements OnInit {
     // Get all teams
     this.teamListService.getTeamListAll()
       .subscribe(
-      teamList => this.teamList = teamList, //Bind to view
+      teamList => this.teamList = teamList, // Bind to view
       err => {
         // Log errors if any
         console.log(err);
