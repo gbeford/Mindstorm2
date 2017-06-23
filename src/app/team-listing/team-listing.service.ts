@@ -25,6 +25,7 @@ export class TeamListingService {
                 res.json()
                     .map(comp => comp.competition)
             );
+            console.log(comps);
         return comps;
         // ...errors if any
         // .catch((error: any) => Observable.throw(error.json().error || 'Server error'));

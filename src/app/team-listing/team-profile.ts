@@ -1,14 +1,14 @@
-// export class TeamList {
-//     public id: number;
-//     public name: string;
-//     public email: string;
-//     public password: string;
-//     public created_at: Date;
-//     public updated_at: Date;
-//     public from_email: string;
-//     public full_name: string;
-//     public contact_name: string;
-// }
+export class TeamProfile {
+    public id: number;
+    public name: string;
+    public email: string;
+    public password: string;
+    public created_at: Date;
+    public updated_at: Date;
+    public from_email: string;
+    public full_name: string;
+    public contact_name: string;
+}
 
 //Json Sample
  // "competition": {
