@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  //api:'http://localhost:8080/'
+  teamsApiUrl: 'http://localhost:51142/api/teams'
 };

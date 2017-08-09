@@ -1,17 +1,16 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { TeamListingService } from './team-listing.service';
+import { TeamService } from '../team.service';
 import { Team } from '../model/Team';
 
 @Component({
   selector: 'app-team-listing',
-  providers: [TeamListingService],
   templateUrl: './team-listing.component.html',
   styleUrls: ['./team-listing.component.css']
 })
 export class TeamListingComponent implements OnInit, OnChanges {
   teamList: Team[];
 
-  constructor(private teamListService: TeamListingService) { }
+  constructor(private teamService: TeamService) { }
 
   // Local properties
 
@@ -27,7 +26,7 @@ export class TeamListingComponent implements OnInit, OnChanges {
 
   loadList() {
     // Get all teams
-    this.teamListService.getTeamListAll()
+    this.teamService.getTeamListAll()
       .subscribe(
       teamList => this.teamList = teamList, // Bind to view
       err => {

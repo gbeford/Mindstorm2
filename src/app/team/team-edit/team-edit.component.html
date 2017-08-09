@@ -4,12 +4,19 @@
         <h5>Match Entry Form</h5>
       </div>
       <div class='panel-body'>
-        <form class='form-horizontal' role='form'>
+        <form class='form-horizontal' [formGroup]="teamEditForm" novalidate (ngSubmit)="save(teamEditForm.value, teamEditForm.valid)">
           <div class='form-group'>
             <label class='control-label col-md-2 col-md-offset-2' for='team_name'>Team Name</label>
             <div class='col-md-2'>
               <div class='form-group internal'>
-                <input class='form-control' id='team_name' placeholder='Team Name' type='text'>
+                <input class='form-control'
+                placeholder='Team Name'
+                 type='text'
+                 formControlName="teamName"
+                 required>
+                 <div [hidden]="teamEditForm.controls.teamName.valid || teamEditForm.controls.teamName.pristine && !submitted" class="alert alert-danger">
+                   Team name is required !
+                </div>
               </div>
             </div>
           </div>
@@ -17,7 +24,14 @@
               <label class='control-label col-md-2 col-md-offset-2' for='team_number'>Team Number</label>
               <div class='col-md-2'>
                 <div class='form-group internal'>
-                  <input class='form-control' id='team_number' placeholder='Team Number' type='text'>
+                  <input class='form-control' id='team_number'
+                   placeholder='Team Number'
+                   type='text'
+                   formControlName="teamNumber"
+                   required >
+                   <div [hidden]="teamEditForm.controls.teamNumber.valid || teamEditForm.controls.teamNumber.pristine && !submitted" class="alert alert-danger">
+                    Team number is required !
+                 </div>
                 </div>
               </div>
             </div>
@@ -25,7 +39,13 @@
                 <label class='control-label col-md-2 col-md-offset-2' for='coach_first_name'>Coach First Name</label>
                 <div class='col-md-2'>
                   <div class='form-group internal'>
-                    <input class='form-control' id='coach_first_name' placeholder='Coach First Name' type='text'>
+                    <input class='form-control' id='coach_first_name' placeholder='Coach First Name'
+                     type='text'
+                     formControlName="coachFirstName"
+                     required>
+                     <div [hidden]="teamEditForm.controls.coachFirstName.valid || teamEditForm.controls.coachFirstName.pristine && !submitted" class="alert alert-danger">
+                       Coach first name is required !
+                    </div>
                   </div>
                 </div>
               </div>
@@ -61,6 +81,9 @@
                           </div>
                         </div>
                       </div>
+
+                      <button> submit
+                      </button>
         </form>
       </div>
     </div>
