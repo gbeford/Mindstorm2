@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Team } from './model/Team';
+import { Team } from '../model/Team';
 
 import { Observable } from 'rxjs/Observable';
 // Import RxJs required methods
@@ -12,7 +12,8 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 
 export class TeamListingService {
-    private url = 'http://mindstorm.herokuapp.com/api/competitions'
+    // private url = 'http://mindstorm.herokuapp.com/api/competitions'
+    private url = 'http://localhost:51142/api/teams'
 
     constructor(private http: Http) { }
 
@@ -23,7 +24,6 @@ export class TeamListingService {
             // ...and calling .json() on the response to return data
             .map((res: Response) =>
                 res.json()
-                    .map(comp => comp.competition)
             );
             console.log(comps);
         return comps;

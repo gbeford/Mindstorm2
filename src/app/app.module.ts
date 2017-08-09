@@ -13,9 +13,10 @@ import { MatchScoringComponent } from './match/match-scoring.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { TeamListingComponent } from './team/team-listing.component';
+import { TeamModule } from './team/team.module';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+
 
 
 @NgModule({
@@ -24,7 +25,6 @@ import { AdminComponent } from './admin/admin.component';
     MatchScoringComponent,
     PageNotFoundComponent,
     MenuComponent,
-    TeamListingComponent,
     HomeComponent,
     AdminComponent
   ],
@@ -34,7 +34,8 @@ import { AdminComponent } from './admin/admin.component';
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TeamModule
     // RouterModule
   ],
   providers: [],

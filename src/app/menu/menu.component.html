@@ -20,11 +20,15 @@
 
 
 
-    <a [routerLink]="['/teamList']" md-menu-item>
+    <a [routerLink]="['/teams']" md-menu-item>
       <md-icon>view_list </md-icon>
       <!--<span>Team List</span> -->
     </a>
-
+    
+    <a [routerLink]="['/teams/edit']" md-menu-item>
+      <md-icon>create </md-icon>
+     <span>Team Edit</span>
+    </a>
 
     <button md-menu-item>
     <md-icon> mail </md-icon>
