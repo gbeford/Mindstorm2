@@ -33,17 +33,15 @@ export class TeamService {
     }
 
     // Add a new comment
-    addTeam(team: Team) {
+    addTeam(team: Team): Observable<Team> {
         console.log(team);
         const bodyString = JSON.stringify(team); // Stringify payload
         const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         const options = new RequestOptions({ headers: headers }); // Create a request option
 
-         this.http.post(this.url, bodyString, options) // ...using post request
-                .map((res: Response) => {
-                    console.log('hi');
-                    res.json();
-                }) // ...and calling .json() on the response to return data
+         return this.http.post(this.url, bodyString, options) // ...using post request
+                .map((res: Response) => res.json());
+                // ...and calling .json() on the response to return data
                 // ...errors if any
             // .catch((error: any) => Observable.throw(error.json().error || 'Server error')
   // );

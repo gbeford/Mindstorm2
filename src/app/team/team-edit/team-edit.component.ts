@@ -12,6 +12,7 @@ import { Team } from 'app/team/model/team';
 export class TeamEditComponent implements OnInit {
   public teamEditForm: FormGroup;
   public submitted: boolean;
+  public resp: Team;
 
   constructor(private _fb: FormBuilder, private teamService: TeamService) { }
 
@@ -26,7 +27,8 @@ export class TeamEditComponent implements OnInit {
 
   save(team: Team, isValid: boolean) {
     this.submitted = true;
-    this.teamService.addTeam(team);
+    this.teamService.addTeam(team).subscribe(
+      resp => this.resp = resp);
     console.log(team, isValid);
   }
 
