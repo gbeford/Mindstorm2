@@ -5,17 +5,27 @@
 </button>
 
   <md-menu #appMenu="mdMenu">
-    <button md-menu-item>
-  <md-icon>home</md-icon>
+
+    <a [routerLink]="['/']" md-menu-item>
+      <md-icon>home</md-icon>
+    </a>
     <!--<span> Home </span>-->
-  </button>
-    <a [routerLink]="['/match']"><button md-menu-item><md-icon>create </md-icon> 
-    <!--<span>Match</span> -->
-    </button></a>
-    <a [routerLink]="['/teamList']"><button md-menu-item>
-       <md-icon>view_list </md-icon> 
-    <!--<span>Team List</span> -->
-    </button></a>
+
+
+
+    <a [routerLink]="['/match']" md-menu-item>
+      <md-icon>create </md-icon>
+      <!--<span>Match</span> -->
+    </a>
+
+
+
+    <a [routerLink]="['/teamList']" md-menu-item>
+      <md-icon>view_list </md-icon>
+      <!--<span>Team List</span> -->
+    </a>
+
+
     <button md-menu-item>
     <md-icon> mail </md-icon>
     <!--<span> Send </span>-->

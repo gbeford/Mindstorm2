@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { TeamList } from './model/TeamList';
+import { Team } from './model/Team';
 
 import { Observable } from 'rxjs/Observable';
 // Import RxJs required methods
@@ -17,7 +17,7 @@ export class TeamListingService {
     constructor(private http: Http) { }
 
     // Fetch all teams
-    getTeamListAll(): Observable<TeamList[]> {
+    getTeamListAll(): Observable<Team[]> {
         // ...using get request
         const comps = this.http.get(this.url)
             // ...and calling .json() on the response to return data
@@ -43,7 +43,7 @@ export class TeamListingService {
     // }
 
     // Update a comment
-    //updateComment(body: Object): Observable<Comment[]> {
+    // updateComment(body: Object): Observable<Comment[]> {
     //     let bodyString = JSON.stringify(body); // Stringify payload
     //     let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     //     let options = new RequestOptions({ headers: headers }); // Create a request option

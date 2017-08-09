@@ -7,7 +7,6 @@ import { MatchService } from './match.service';
   providers: [MatchService],
   templateUrl: './match-scoring.component.html',
   styleUrls: ['./match-scoring.component.css']
- 
 })
 
 
@@ -17,14 +16,7 @@ export class MatchScoringComponent implements OnInit {
 
 
   constructor(private _matchService: MatchService) { }
- 
- 
 
-
-  ngOnInit() {
- 
-  }
-
-  
+  ngOnInit() { }
 
 }
