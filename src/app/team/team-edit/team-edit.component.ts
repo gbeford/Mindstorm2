@@ -10,6 +10,7 @@ import { Team } from 'app/team/model/team';
 })
 
 export class TeamEditComponent implements OnInit {
+  public err: any;
   public teamEditForm: FormGroup;
   public submitted: boolean;
   public resp: Team;
@@ -28,7 +29,9 @@ export class TeamEditComponent implements OnInit {
   save(team: Team, isValid: boolean) {
     this.submitted = true;
     this.teamService.addTeam(team).subscribe(
-      resp => this.resp = resp);
+      resp => this.resp = resp,
+      err => this.err = err
+    );
     console.log(team, isValid);
   }
 

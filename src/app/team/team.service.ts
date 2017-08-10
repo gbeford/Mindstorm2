@@ -26,7 +26,7 @@ export class TeamService {
                 res.json()
             )
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'))
-            console.log(comps);
+        console.log(comps);
         return comps;
         // ...errors if any
 
@@ -39,12 +39,12 @@ export class TeamService {
         const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         const options = new RequestOptions({ headers: headers }); // Create a request option
 
-         return this.http.post(this.url, bodyString, options) // ...using post request
-                .map((res: Response) => res.json());
-                // ...and calling .json() on the response to return data
-                // ...errors if any
-            // .catch((error: any) => Observable.throw(error.json().error || 'Server error')
-  // );
+        return this.http.post(this.url, bodyString, options) // ...using post request
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error')
+            // ...and calling .json() on the response to return data
+            // ...errors if any
+         );
     }
 
     // Update a comment
