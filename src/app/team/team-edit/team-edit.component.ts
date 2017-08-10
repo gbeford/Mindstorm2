@@ -28,11 +28,18 @@ export class TeamEditComponent implements OnInit {
 
   save(team: Team, isValid: boolean) {
     this.submitted = true;
+    if (team.teamId === 0) {
     this.teamService.addTeam(team).subscribe(
       resp => this.resp = resp,
       err => this.err = err
     );
     console.log(team, isValid);
+  } else {
+    this.teamService.updateTeam(team).subscribe(
+      resp => this.resp = resp,
+      err => this.err = err
+    );
   }
+}
 
 }
