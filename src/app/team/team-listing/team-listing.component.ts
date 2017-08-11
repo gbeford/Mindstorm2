@@ -8,7 +8,7 @@ import { Team } from '../model/Team';
   styleUrls: ['./team-listing.component.css']
 })
 export class TeamListingComponent implements OnInit, OnChanges {
-  teamList: Team[];
+   teamList: Team[];
 
   constructor(private teamService: TeamService) { }
 
@@ -19,14 +19,23 @@ export class TeamListingComponent implements OnInit, OnChanges {
   // @Input() editId: string;
 
 
+    // tslint:disable-next-line:member-ordering
+    // teamList = [
+    // tslint:disable-next-line:max-line-length
+    //   { teamId: 1, teamNumber: 467, teamName: 'Colonials', coachFirstName: null, coachLastName: null, coachEmail: 'Carol@shrewsburyrobotics.org', altCoachFirstName: null, altCoachlastName: null, altCoachEmail: null, city: 'Shrewsbury', state: 'MA' },
+    //   { teamId: 2, teamNumber: 87, teamName: 'Stars', coachFirstName: null, coachLastName: null, coachEmail: 'Gina@shrews.org', altCoachFirstName: null, altCoachlastName: null, altCoachEmail: null, city: 'Spencer', state: 'MA' },
+    // tslint:disable-next-line:max-line-length
+    //   { teamId: 3, teamNumber: 984, teamName: 'Sharks', coachFirstName: 'Bob', coachLastName: null, coachEmail: null, altCoachFirstName: null, altCoachlastName: null, altCoachEmail: null, city: null, state: null }
+    // ]
+
   ngOnInit() {
     // Load comments
-    this.loadList()
+    this.getList()
   }
 
-  loadList() {
+  getList() {
     // Get all teams
-    this.teamService.getTeamListAll()
+    this.teamService.getTeams()
       .subscribe(
       teamList => this.teamList = teamList, // Bind to view
       err => {
@@ -36,7 +45,7 @@ export class TeamListingComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: any) {
-    this.loadList();
+    this.getList();
   }
 
 }

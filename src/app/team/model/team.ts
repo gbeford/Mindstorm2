@@ -1,18 +1,16 @@
-export class Team {
+export interface Team {
 
-    public teamId: number;
-    public teamName: string;
-    public teamNumber: number;
-    public coachFirstName: string;
-    public coachlastName: string;
-    public coachEmail: string;
-    public altCoachFirstName: string;
-    public altCoachlastName: string;
-    public altCoachEmail: string;
-    public city: string;
-    public state: string;
-    public competitionID: number;
-    public created_: Date;
-    public updated: Date;
+    teamId: number;
+    teamName: string;
+    teamNumber: number;
+    coachFirstName: string;
+    coachlastName: string;
+    coachEmail: string;
+    altCoachFirstName: string;
+    altCoachlastName: string;
+    altCoachEmail: string;
+    city: string;
+    state: string;
+    competitionID: number;
 
 }

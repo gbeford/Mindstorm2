@@ -180,6 +180,9 @@
 </div>-->
 
 <div *ngFor="let team of teamList">
-{{team.teamId}} - {{team.teamName}} - {{team.teamNumber}}
+{{team.teamId}} - {{team.teamName}} - {{team.teamNumber}} -
+ <a [routerLink]="['/teams', team.teamId, 'edit']" md-menu-item>  <md-icon>create </md-icon></a>
 </div>
+
+
 

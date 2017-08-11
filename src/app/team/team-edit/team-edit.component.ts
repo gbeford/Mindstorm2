@@ -1,5 +1,7 @@
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { TeamService } from '../team.service';
 import { Team } from 'app/team/model/team';
 
@@ -10,14 +12,17 @@ import { Team } from 'app/team/model/team';
 })
 
 export class TeamEditComponent implements OnInit {
+  teamList: Team[];
   public err: any;
   public teamEditForm: FormGroup;
   public submitted: boolean;
   public resp: Team;
 
-  constructor(private _fb: FormBuilder, private teamService: TeamService) { }
+  constructor(private _fb: FormBuilder,
+    private teamService: TeamService,
+    private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
     this.teamEditForm = this._fb.group({
       teamName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
@@ -31,22 +36,39 @@ export class TeamEditComponent implements OnInit {
       city: ['', [<any>Validators.required]],
       state: ['', [<any>Validators.required]],
     });
+
+    const id = +this.route.snapshot.params['id'];
+    this.route.params.subscribe(
+      params => {
+        const id = +params['id'];
+      }
+    );
   }
 
-  save(team: Team, isValid: boolean) {
+  save(team: Team, isValid: boolean, teamId: number) {
     this.submitted = true;
     if (team.teamId === 0) {
-    this.teamService.addTeam(team).subscribe(
-      resp => this.resp = resp,
-      err => this.err = err
-    );
-    console.log(team, isValid);
-  } else {
-    this.teamService.updateTeam(team).subscribe(
-      resp => this.resp = resp,
-      err => this.err = err
-    );
+      this.teamService.addTeam(team).subscribe(
+        resp => this.resp = resp,
+        err => this.err = <any>err
+      );
+      console.log(team, isValid);
+    } else {
+      this.teamService.updateTeam(team).subscribe(
+        resp => this.resp = resp,
+        err => this.err = err
+      );
+    }
   }
-}
+  getTeam(id: number) {
+    // Get all teams
+    this.teamService.getTeam(id)
+      .subscribe(
+      teamList => this.teamList = teamList, // Bind to view
+      err => {
+        // Log errors if any
+        console.log(err);
+      });
+  }
 
 }

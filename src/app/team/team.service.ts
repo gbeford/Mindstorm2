@@ -13,14 +13,15 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class TeamService {
     // private url = 'http://mindstorm.herokuapp.com/api/competitions'
-    private url = environment.teamsApiUrl;
+    private baseUrl = environment.teamsApiUrl;
 
     constructor(private http: Http) { }
 
+
     // Fetch all teams
-    public getTeamListAll(): Observable<Team[]> {
+    public getTeams(): Observable<Team[]> {
         // ...using get request
-        const comps = this.http.get(this.url)
+        const comps = this.http.get(this.baseUrl)
             // ...and calling .json() on the response to return data
             .map((res: Response) =>
                 res.json()
@@ -29,7 +30,24 @@ export class TeamService {
         console.log(comps);
         return comps;
         // ...errors if any
+    }
 
+    public getTeam(id: number): Observable<Team[]> {
+        if (id === 0) {
+            // return Observable.of(this.initializeTeam());
+        }
+        // ...using get request
+        const url = '${this.baseUrl}/${id}';
+        const comps = this.http.get(url)
+            // ...and calling .json() on the response to return data
+            .map((res: Response) =>
+                res.json()
+            )
+       // .do(data => console.log('getProduct: ' + JSON.stringify(data)))
+        .catch(this.handleError);
+       // console.log(comps);
+        return comps;
+        // ...errors if any
     }
 
     // Add a new comment
@@ -39,12 +57,12 @@ export class TeamService {
         const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         const options = new RequestOptions({ headers: headers }); // Create a request option
 
-        return this.http.post(this.url, bodyString, options) // ...using post request
+        return this.http.post(this.baseUrl, bodyString, options) // ...using post request
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error')
             // ...and calling .json() on the response to return data
             // ...errors if any
-         );
+            );
     }
 
     // Update a comment
@@ -53,9 +71,9 @@ export class TeamService {
         const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         const options = new RequestOptions({ headers: headers }); // Create a request option
 
-        return this.http.put(`${this.url}/${team['id']}`, team, options) // ...using put request
+        return this.http.put(`${this.baseUrl}/${team['id']}`, team, options) // ...using put request
             .map((res: Response) => res.json()) // ...and calling .json() on the response to return data
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error')); // ...errors if any
     }
 
     // Delete a comment
@@ -64,4 +82,30 @@ export class TeamService {
     //         .map((res: Response) => res.json()) // ...and calling .json() on the response to return data
     //         .catch((error: any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     // }
+
+    private handleError(error: Response): Observable<any> {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
+
+
+    initializeTeam(): Team {
+        // Return an initialized object
+        return {
+            teamId: 0,
+            teamName: null,
+            teamNumber: null,
+            coachFirstName: null,
+            coachlastName: null,
+            coachEmail: null,
+            altCoachFirstName: null,
+            altCoachlastName: null,
+            altCoachEmail: null,
+            city: null,
+            state: null,
+            competitionID: null,
+        }
+    }
 }
