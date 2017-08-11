@@ -10,7 +10,7 @@
           <div class='col-md-2'>
             <div class='form-group internal'>
               <input class='form-control' placeholder='Team Name' type='text' formControlName="teamName" required>
-              <div [hidden]="teamEditForm.controls.teamName.valid || teamEditForm.controls.teamName.pristine && !submitted" class="alert alert-danger">
+              <div [hidden]="teamEditForm.controls['teamName'].valid || teamEditForm.controls['teamName'].pristine && !submitted" class="alert alert-danger">
                 Team name is required !
               </div>
             </div>
@@ -21,7 +21,7 @@
           <div class='col-md-2'>
             <div class='form-group internal'>
               <input class='form-control' id='team_number' placeholder='Team Number' type='text' formControlName="teamNumber" required>
-              <div [hidden]="teamEditForm.controls.teamNumber.valid || teamEditForm.controls.teamNumber.pristine && !submitted" class="alert alert-danger">
+              <div [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
                 Team number is required !
               </div>
             </div>
@@ -33,7 +33,7 @@
             <div class='form-group internal'>
               <input class='form-control' id='coach_first_name' placeholder='Coach First Name' type='text' formControlName="coachFirstName"
                 required>
-              <div [hidden]="teamEditForm.controls.coachFirstName.valid || teamEditForm.controls.coachFirstName.pristine && !submitted"
+              <div [hidden]="teamEditForm.controls['coachFirstName'].valid || teamEditForm.controls['coachFirstName'].pristine && !submitted"
                 class="alert alert-danger">
                 Coach first name is required !
               </div>
@@ -46,7 +46,8 @@
             <div class='form-group internal'>
               <input class='form-control' id='coach_last_name' placeholder='Coach Last Name' type='text' formControlName="coachLastName"
                 required>
-              <div [hidden]="teamEditForm.controls.coachLastName.valid || teamEditForm.controls.coachLastName.pristine && !submitted" class="alert alert-danger">
+              <div [hidden]="teamEditForm.controls['coachLastName'].valid || teamEditForm.controls['coachLastName'].pristine && !submitted"
+                class="alert alert-danger">
                 Coach last name is required !
               </div>
             </div>
@@ -57,7 +58,7 @@
           <div class='col-md-2'>
             <div class='form-group internal'>
               <input class='form-control' id='coach_email' placeholder='Coach Email' type='email' formControlName="coachEmail" required>
-              <div [hidden]="teamEditForm.controls.coachEmail.valid || teamEditForm.controls.coachEmail.pristine && !submitted" class="alert alert-danger">
+              <div [hidden]="teamEditForm.controls['coachEmail'].valid || teamEditForm.controls['coachEmail'].pristine && !submitted" class="alert alert-danger">
                 Coach email is required !
               </div>
             </div>
@@ -92,7 +93,7 @@
           <div class='col-md-2'>
             <div class='form-group internal'>
               <input class='form-control' id='city' placeholder='City' type='text' formControlName="city" required>
-              <div [hidden]="teamEditForm.controls.city.valid || teamEditForm.controls.city.pristine && !submitted" class="alert alert-danger">
+              <div [hidden]="teamEditForm.controls['city'].valid || teamEditForm.controls['city'].pristine && !submitted" class="alert alert-danger">
                 City is required !
               </div>
             </div>
@@ -103,15 +104,14 @@
           <div class='col-md-2'>
             <div class='form-group internal'>
               <input class='form-control' id='state' placeholder='State' type='text' formControlName="state" required>
-              <div [hidden]="teamEditForm.controls.state.valid || teamEditForm.controls.state.pristine && !submitted" class="alert alert-danger">
+              <div [hidden]="teamEditForm.controls['state'].valid || teamEditForm.controls['state'].pristine && !submitted" class="alert alert-danger">
                 City is required !
               </div>
             </div>
           </div>
         </div>
 
-        <button> submit
-                      </button>
+        <button> submit</button>
       </form>
     </div>
   </div>

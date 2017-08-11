@@ -32,7 +32,7 @@ export class TeamService {
         // ...errors if any
     }
 
-    public getTeam(id: number): Observable<Team[]> {
+    public getTeam(id: number): Observable<Team> {
         if (id === 0) {
             // return Observable.of(this.initializeTeam());
         }
@@ -43,9 +43,9 @@ export class TeamService {
             .map((res: Response) =>
                 res.json()
             )
-       // .do(data => console.log('getProduct: ' + JSON.stringify(data)))
-        .catch(this.handleError);
-       // console.log(comps);
+            // .do(data => console.log('getProduct: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+        // console.log(comps);
         return comps;
         // ...errors if any
     }
