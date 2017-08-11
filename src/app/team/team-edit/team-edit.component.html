@@ -1,90 +1,118 @@
 <div class='container'>
-    <div class='panel panel-primary dialog-panel'>
-      <div class='panel-heading'>
-        <h5>Match Entry Form</h5>
-      </div>
-      <div class='panel-body'>
-        <form class='form-horizontal' [formGroup]="teamEditForm" novalidate (ngSubmit)="save(teamEditForm.value, teamEditForm.valid)">
-          <div class='form-group'>
-            <label class='control-label col-md-2 col-md-offset-2' for='team_name'>Team Name</label>
-            <div class='col-md-2'>
-              <div class='form-group internal'>
-                <input class='form-control'
-                placeholder='Team Name'
-                 type='text'
-                 formControlName="teamName"
-                 required>
-                 <div [hidden]="teamEditForm.controls.teamName.valid || teamEditForm.controls.teamName.pristine && !submitted" class="alert alert-danger">
-                   Team name is required !
-                </div>
+  <div class='panel panel-primary dialog-panel'>
+    <div class='panel-heading'>
+      <h5>Match Entry Form</h5>
+    </div>
+    <div class='panel-body'>
+      <form class='form-horizontal' [formGroup]="teamEditForm" novalidate (ngSubmit)="save(teamEditForm.value, teamEditForm.valid)">
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='team_name'>Team Name</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' placeholder='Team Name' type='text' formControlName="teamName" required>
+              <div [hidden]="teamEditForm.controls.teamName.valid || teamEditForm.controls.teamName.pristine && !submitted" class="alert alert-danger">
+                Team name is required !
               </div>
             </div>
           </div>
-          <div class='form-group'>
-              <label class='control-label col-md-2 col-md-offset-2' for='team_number'>Team Number</label>
-              <div class='col-md-2'>
-                <div class='form-group internal'>
-                  <input class='form-control' id='team_number'
-                   placeholder='Team Number'
-                   type='text'
-                   formControlName="teamNumber"
-                   required >
-                   <div [hidden]="teamEditForm.controls.teamNumber.valid || teamEditForm.controls.teamNumber.pristine && !submitted" class="alert alert-danger">
-                    Team number is required !
-                 </div>
-                </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='team_number'>Team Number</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='team_number' placeholder='Team Number' type='text' formControlName="teamNumber" required>
+              <div [hidden]="teamEditForm.controls.teamNumber.valid || teamEditForm.controls.teamNumber.pristine && !submitted" class="alert alert-danger">
+                Team number is required !
               </div>
             </div>
-            <div class='form-group'>
-                <label class='control-label col-md-2 col-md-offset-2' for='coach_first_name'>Coach First Name</label>
-                <div class='col-md-2'>
-                  <div class='form-group internal'>
-                    <input class='form-control' id='coach_first_name' placeholder='Coach First Name'
-                     type='text'
-                     formControlName="coachFirstName"
-                     required>
-                     <div [hidden]="teamEditForm.controls.coachFirstName.valid || teamEditForm.controls.coachFirstName.pristine && !submitted" class="alert alert-danger">
-                       Coach first name is required !
-                    </div>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='coach_first_name'>Coach First Name</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='coach_first_name' placeholder='Coach First Name' type='text' formControlName="coachFirstName"
+                required>
+              <div [hidden]="teamEditForm.controls.coachFirstName.valid || teamEditForm.controls.coachFirstName.pristine && !submitted"
+                class="alert alert-danger">
+                Coach first name is required !
               </div>
-              <div class='form-group'>
-                  <label class='control-label col-md-2 col-md-offset-2' for='coach_last_name'>Coach Last Name</label>
-                  <div class='col-md-2'>
-                    <div class='form-group internal'>
-                      <input class='form-control' id='coach_last_name' placeholder='Coach Last Name' type='text'>
-                    </div>
-                  </div>
-                </div>
-                <div class='form-group'>
-                    <label class='control-label col-md-2 col-md-offset-2' for='coach_email'>Coach Email</label>
-                    <div class='col-md-2'>
-                      <div class='form-group internal'>
-                        <input class='form-control' id='coach_email' placeholder='Coach Email' type='text'>
-                      </div>
-                    </div>
-                  </div>
-                  <div class='form-group'>
-                      <label class='control-label col-md-2 col-md-offset-2' for='city'>City</label>
-                      <div class='col-md-2'>
-                        <div class='form-group internal'>
-                          <input class='form-control' id='city' placeholder='City' type='text'>
-                        </div>
-                      </div>
-                    </div>
-                    <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2' for='state'>State</label>
-                        <div class='col-md-2'>
-                          <div class='form-group internal'>
-                            <input class='form-control' id='state' placeholder='State' type='text'>
-                          </div>
-                        </div>
-                      </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='coach_last_name'>Coach Last Name</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='coach_last_name' placeholder='Coach Last Name' type='text' formControlName="coachLastName"
+                required>
+              <div [hidden]="teamEditForm.controls.coachLastName.valid || teamEditForm.controls.coachLastName.pristine && !submitted" class="alert alert-danger">
+                Coach last name is required !
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='coach_email'>Coach Email</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='coach_email' placeholder='Coach Email' type='email' formControlName="coachEmail" required>
+              <div [hidden]="teamEditForm.controls.coachEmail.valid || teamEditForm.controls.coachEmail.pristine && !submitted" class="alert alert-danger">
+                Coach email is required !
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='coach_first_name'>Alternate Coach First Name</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='alt_coach_first_name' placeholder='Alternate Coach First Name' type='text' formControlName="altCoachFirstName">
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='coach_last_name'>Alternate Coach Last Name</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='alt_coach_last_name' placeholder='Alternate Coach Last Name' type='text' formControlName="altCoachLastName">
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='coach_email'>Alternate Coach Email</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='alt_coach_email' placeholder='Alternate Coach Email' type='email' formControlName="altCoachEmail">
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='city'>City</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='city' placeholder='City' type='text' formControlName="city" required>
+              <div [hidden]="teamEditForm.controls.city.valid || teamEditForm.controls.city.pristine && !submitted" class="alert alert-danger">
+                City is required !
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='state'>State</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='state' placeholder='State' type='text' formControlName="state" required>
+              <div [hidden]="teamEditForm.controls.state.valid || teamEditForm.controls.state.pristine && !submitted" class="alert alert-danger">
+                City is required !
+              </div>
+            </div>
+          </div>
+        </div>
 
-                      <button> submit
+        <button> submit
                       </button>
-        </form>
-      </div>
+      </form>
     </div>
   </div>
+</div>

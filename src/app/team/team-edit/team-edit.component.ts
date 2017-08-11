@@ -23,6 +23,13 @@ export class TeamEditComponent implements OnInit {
       teamName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
       teamNumber: ['', [<any>Validators.required]],
       coachFirstName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
+      coachLastName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
+      coachEmail: ['', [<any>Validators.required, <any>Validators.email]],
+      altCoachFirstName: [''],
+      altCoachLastName: [''],
+      altCoachEmail: [''],
+      city: ['', [<any>Validators.required]],
+      state: ['', [<any>Validators.required]],
     });
   }
 
