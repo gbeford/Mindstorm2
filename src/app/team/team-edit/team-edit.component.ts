@@ -13,7 +13,7 @@ import { ITeam } from 'app/team/model/team';
 
 export class TeamEditComponent implements OnInit {
    // title = 'MindStorm!';
-  teamList: ITeam[];
+  teamList: ITeam;
   public err: any;
   public teamEditForm: FormGroup;
   public submitted: boolean;
