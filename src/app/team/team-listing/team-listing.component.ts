@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { TeamService } from '../team.service';
-import { Team } from '../model/Team';
+import { ITeam } from '../model/Team';
 
 @Component({
   selector: 'app-team-listing',
@@ -8,7 +8,7 @@ import { Team } from '../model/Team';
   styleUrls: ['./team-listing.component.css']
 })
 export class TeamListingComponent implements OnInit, OnChanges {
-   teamList: Team[];
+   teamList: ITeam[];
 
   constructor(private teamService: TeamService) { }
 

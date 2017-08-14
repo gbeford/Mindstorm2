@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Team } from './model/Team';
+import { ITeam } from './model/Team';
 import { environment } from '../../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
@@ -19,7 +19,7 @@ export class TeamService {
 
 
     // Fetch all teams
-    public getTeams(): Observable<Team[]> {
+    public getTeams(): Observable<ITeam[]> {
         // ...using get request
         const comps = this.http.get(this.baseUrl)
             // ...and calling .json() on the response to return data
@@ -32,7 +32,7 @@ export class TeamService {
         // ...errors if any
     }
 
-    public getTeam(id: number): Observable<Team> {
+    public getTeam(id: number): Observable<ITeam> {
         if (id === 0) {
             // return Observable.of(this.initializeTeam());
         }
@@ -51,7 +51,7 @@ export class TeamService {
     }
 
     // Add a new comment
-    addTeam(team: Team): Observable<Team> {
+    addTeam(team: ITeam): Observable<ITeam> {
         console.log(team);
         const bodyString = JSON.stringify(team); // Stringify payload
         const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
@@ -66,7 +66,7 @@ export class TeamService {
     }
 
     // Update a comment
-    updateTeam(team: Team): Observable<Team> {
+    updateTeam(team: ITeam): Observable<ITeam> {
         const bodyString = JSON.stringify(team); // Stringify payload
         const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         const options = new RequestOptions({ headers: headers }); // Create a request option
@@ -91,7 +91,7 @@ export class TeamService {
     }
 
 
-    initializeTeam(): Team {
+    initializeTeam(): ITeam {
         // Return an initialized object
         return {
             teamId: 0,

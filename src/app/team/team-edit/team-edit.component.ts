@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TeamService } from '../team.service';
-import { Team } from 'app/team/model/team';
+import { ITeam } from 'app/team/model/team';
 
 @Component({
   selector: 'app-team-edit',
@@ -12,11 +12,12 @@ import { Team } from 'app/team/model/team';
 })
 
 export class TeamEditComponent implements OnInit {
-  teamList: Team[];
+   // title = 'MindStorm!';
+  teamList: ITeam[];
   public err: any;
   public teamEditForm: FormGroup;
   public submitted: boolean;
-  public resp: Team;
+  public resp: ITeam;
 
   constructor(private _fb: FormBuilder,
     private teamService: TeamService,
@@ -45,7 +46,7 @@ export class TeamEditComponent implements OnInit {
     );
   }
 
-  save(team: Team, isValid: boolean, teamId: number) {
+  save(team: ITeam, isValid: boolean, teamId: number) {
     this.submitted = true;
     if (team.teamId === 0) {
       this.teamService.addTeam(team).subscribe(

@@ -1,5 +1,5 @@
-export interface Team {
-
+/* Defines the team entity */
+export interface ITeam {
     teamId: number;
     teamName: string;
     teamNumber: number;
@@ -12,5 +12,4 @@ export interface Team {
     city: string;
     state: string;
     competitionID: number;
-
 }
