@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { ITeam } from './model/Team';
+import { ITeam } from './model/team';
 import { environment } from '../../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
@@ -37,7 +37,7 @@ export class TeamService {
             // return Observable.of(this.initializeTeam());
         }
         // ...using get request
-        const url = '${this.baseUrl}/${id}';
+        const url = `${this.baseUrl}/${id}`;
         const comps = this.http.get(url)
             // ...and calling .json() on the response to return data
             .map((res: Response) =>
@@ -98,10 +98,10 @@ export class TeamService {
             teamName: null,
             teamNumber: null,
             coachFirstName: null,
-            coachlastName: null,
+            coachLastName: null,
             coachEmail: null,
             altCoachFirstName: null,
-            altCoachlastName: null,
+            altCoachLastName: null,
             altCoachEmail: null,
             city: null,
             state: null,

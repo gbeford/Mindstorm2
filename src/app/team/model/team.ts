@@ -4,10 +4,10 @@ export interface ITeam {
     teamName: string;
     teamNumber: number;
     coachFirstName: string;
-    coachlastName: string;
+    coachLastName: string;
     coachEmail: string;
     altCoachFirstName: string;
-    altCoachlastName: string;
+    altCoachLastName: string;
     altCoachEmail: string;
     city: string;
     state: string;

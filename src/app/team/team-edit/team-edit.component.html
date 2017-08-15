@@ -9,7 +9,11 @@
           <label class='control-label col-md-2 col-md-offset-2' for='team_name'>Team Name</label>
           <div class='col-md-2'>
             <div class='form-group internal'>
-              <input class='form-control' placeholder='Team Name' type='text' formControlName="teamName" required>
+              <input class='form-control'
+               placeholder='Team Name'
+               type='text'
+               formControlName="teamName"
+               required>
               <div [hidden]="teamEditForm.controls['teamName'].valid || teamEditForm.controls['teamName'].pristine && !submitted" class="alert alert-danger">
                 Team name is required !
               </div>
@@ -68,7 +72,8 @@
           <label class='control-label col-md-2 col-md-offset-2' for='coach_first_name'>Alternate Coach First Name</label>
           <div class='col-md-2'>
             <div class='form-group internal'>
-              <input class='form-control' id='alt_coach_first_name' placeholder='Alternate Coach First Name' type='text' formControlName="altCoachFirstName">
+              <input class='form-control' id='alt_coach_first_name' placeholder='Alternate Coach First Name' type='text'
+               formControlName="altCoachFirstName">
             </div>
           </div>
         </div>
@@ -76,7 +81,8 @@
           <label class='control-label col-md-2 col-md-offset-2' for='coach_last_name'>Alternate Coach Last Name</label>
           <div class='col-md-2'>
             <div class='form-group internal'>
-              <input class='form-control' id='alt_coach_last_name' placeholder='Alternate Coach Last Name' type='text' formControlName="altCoachLastName">
+              <input class='form-control' id='alt_coach_last_name' placeholder='Alternate Coach Last Name' type='text'
+              formControlName="altCoachLastName">
             </div>
           </div>
         </div>

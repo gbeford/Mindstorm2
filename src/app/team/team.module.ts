@@ -15,7 +15,7 @@ import { TeamService } from './team.service';
     MaterialModule,
     RouterModule.forChild([
       { path: '', component: TeamListingComponent },
-      { path: 'teams/:id/edit', component: TeamEditComponent }
+      { path: ':id/edit', component: TeamEditComponent }
     ])
   ],
   declarations: [

@@ -13,37 +13,29 @@ import { ITeam } from 'app/team/model/team';
 
 export class TeamEditComponent implements OnInit {
    // title = 'MindStorm!';
-  teamList: ITeam;
+  team: ITeam;
   public err: any;
   public teamEditForm: FormGroup;
   public submitted: boolean;
   public resp: ITeam;
 
-  constructor(private _fb: FormBuilder,
+  constructor(private formBuilder: FormBuilder,
     private teamService: TeamService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.teamEditForm = this._fb.group({
-      teamName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
-      teamNumber: ['', [<any>Validators.required]],
-      coachFirstName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
-      coachLastName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
-      coachEmail: ['', [<any>Validators.required, <any>Validators.email]],
-      altCoachFirstName: [''],
-      altCoachLastName: [''],
-      altCoachEmail: [''],
-      city: ['', [<any>Validators.required]],
-      state: ['', [<any>Validators.required]],
-    });
 
-    const id = +this.route.snapshot.params['id'];
+
+   // const id = +this.route.snapshot.params['id'];
     this.route.params.subscribe(
       params => {
         const id = +params['id'];
+        this.getTeam(id);
+        this.buildForm();
       }
     );
+
   }
 
   save(team: ITeam, isValid: boolean, teamId: number) {
@@ -65,11 +57,32 @@ export class TeamEditComponent implements OnInit {
     // Get all teams
     this.teamService.getTeam(id)
       .subscribe(
-      teamList => this.teamList = teamList, // Bind to view
+      team => {
+        this.team = team
+
+      console.log(team);
+    }, // Bind to view
       err => {
         // Log errors if any
         console.log(err);
       });
+  }
+
+  buildForm(){
+    if (this.team) {
+      this.teamEditForm = this.formBuilder.group({
+        teamName: [this.team.teamName, [<any>Validators.required, <any>Validators.maxLength(25)]],
+        teamNumber: [this.team.teamNumber, [<any>Validators.required]],
+        coachFirstName: [this.team.coachFirstName, [<any>Validators.required, <any>Validators.maxLength(25)]],
+        coachLastName: [this.team.coachLastName, [<any>Validators.required, <any>Validators.maxLength(25)]],
+        coachEmail: [this.team.coachEmail, [<any>Validators.required, <any>Validators.email]],
+        altCoachFirstName: [this.team.altCoachFirstName],
+        altCoachLastName: [this.team.altCoachLastName],
+        altCoachEmail: [this.team.altCoachEmail],
+        city: [this.team.city, [<any>Validators.required]],
+        state: [this.team.state, [<any>Validators.required]],
+      });
+    }
   }
 
 }

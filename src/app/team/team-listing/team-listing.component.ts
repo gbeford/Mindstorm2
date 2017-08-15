@@ -11,7 +11,7 @@ export class TeamListingComponent implements OnInit, OnChanges {
    teamList: ITeam[];
 
   constructor(private teamService: TeamService) { }
-
+    title = 'Team List';
   // Local properties
 
   // Input properties
