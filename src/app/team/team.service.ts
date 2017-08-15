@@ -5,8 +5,11 @@ import { environment } from '../../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
 // Import RxJs required methods
-import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
 
 
 
@@ -34,7 +37,7 @@ export class TeamService {
 
     public getTeam(id: number): Observable<ITeam> {
         if (id === 0) {
-            // return Observable.of(this.initializeTeam());
+            return Observable.of(this.initializeTeam());
         }
         // ...using get request
         const url = `${this.baseUrl}/${id}`;
@@ -43,11 +46,17 @@ export class TeamService {
             .map((res: Response) =>
                 res.json()
             )
-            // .do(data => console.log('getProduct: ' + JSON.stringify(data)))
             .catch(this.handleError);
         // console.log(comps);
         return comps;
         // ...errors if any
+    }
+
+    saveTeam(team: ITeam): Observable<ITeam> {
+        if (team.teamId === 0) {
+            return this.addTeam(team);
+        }
+        return this.updateTeam(team);
     }
 
     // Add a new comment
@@ -59,10 +68,7 @@ export class TeamService {
 
         return this.http.post(this.baseUrl, bodyString, options) // ...using post request
             .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error')
-            // ...and calling .json() on the response to return data
-            // ...errors if any
-            );
+            .catch(this.handleError); // ...errors if any
     }
 
     // Update a comment
@@ -71,9 +77,9 @@ export class TeamService {
         const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         const options = new RequestOptions({ headers: headers }); // Create a request option
 
-        return this.http.put(`${this.baseUrl}/${team['id']}`, team, options) // ...using put request
+        return this.http.put(`${this.baseUrl}/${team['teamId']}`, team, options) // ...using put request
             .map((res: Response) => res.json()) // ...and calling .json() on the response to return data
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error')); // ...errors if any
+            .catch(this.handleError); // ...errors if any
     }
 
     // Delete a comment

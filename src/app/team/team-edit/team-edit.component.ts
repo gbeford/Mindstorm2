@@ -1,7 +1,7 @@
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from '../team.service';
 import { ITeam } from 'app/team/model/team';
 
@@ -12,46 +12,47 @@ import { ITeam } from 'app/team/model/team';
 })
 
 export class TeamEditComponent implements OnInit {
-   // title = 'MindStorm!';
+  // title = 'MindStorm!';
   team: ITeam;
   public err: any;
   public teamEditForm: FormGroup;
+
   public submitted: boolean;
   public resp: ITeam;
 
   constructor(private formBuilder: FormBuilder,
     private teamService: TeamService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-
-
-
-   // const id = +this.route.snapshot.params['id'];
+    this.buildForm();
     this.route.params.subscribe(
       params => {
         const id = +params['id'];
         this.getTeam(id);
-        this.buildForm();
       }
     );
 
   }
 
-  save(team: ITeam, isValid: boolean, teamId: number) {
+  save() {
     this.submitted = true;
-    if (team.teamId === 0) {
-      this.teamService.addTeam(team).subscribe(
-        resp => this.resp = resp,
-        err => this.err = <any>err
-      );
-      console.log(team, isValid);
-    } else {
-      this.teamService.updateTeam(team).subscribe(
-        resp => this.resp = resp,
-        err => this.err = err
+    if (this.teamEditForm.dirty && this.teamEditForm.valid) {
+      //copy the form values over the team object values
+      let t = Object.assign({}, this.team, this.teamEditForm.value);
+      this.teamService.saveTeam(t).subscribe(
+        resp => {
+          this.resp = resp
+          this.router.navigate(['/teams']);
+        },
+        err => {
+        this.err = <any>err
+          console.log(err);
+        }
       );
     }
+
+
   }
   getTeam(id: number) {
     // Get all teams
@@ -59,30 +60,46 @@ export class TeamEditComponent implements OnInit {
       .subscribe(
       team => {
         this.team = team
-
-      console.log(team);
-    }, // Bind to view
+        this.populateForm();
+        //console.log(team);
+      }, // Bind to view
       err => {
         // Log errors if any
         console.log(err);
       });
+
   }
 
-  buildForm(){
-    if (this.team) {
-      this.teamEditForm = this.formBuilder.group({
-        teamName: [this.team.teamName, [<any>Validators.required, <any>Validators.maxLength(25)]],
-        teamNumber: [this.team.teamNumber, [<any>Validators.required]],
-        coachFirstName: [this.team.coachFirstName, [<any>Validators.required, <any>Validators.maxLength(25)]],
-        coachLastName: [this.team.coachLastName, [<any>Validators.required, <any>Validators.maxLength(25)]],
-        coachEmail: [this.team.coachEmail, [<any>Validators.required, <any>Validators.email]],
-        altCoachFirstName: [this.team.altCoachFirstName],
-        altCoachLastName: [this.team.altCoachLastName],
-        altCoachEmail: [this.team.altCoachEmail],
-        city: [this.team.city, [<any>Validators.required]],
-        state: [this.team.state, [<any>Validators.required]],
-      });
-    }
+  buildForm() {
+    this.teamEditForm = this.formBuilder.group({
+      teamName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
+      teamNumber: ['', [<any>Validators.required]],
+      coachFirstName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
+      coachLastName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
+      coachEmail: ['', [<any>Validators.required, <any>Validators.email]],
+      altCoachFirstName: [''],
+      altCoachLastName: [''],
+      altCoachEmail: [''],
+      city: ['', [<any>Validators.required]],
+      state: ['', [<any>Validators.required]],
+    });
   }
+
+  populateForm() {
+    this.teamEditForm.patchValue({
+      teamName: this.team.teamName,
+      teamNumber: this.team.teamNumber,
+      coachFirstName: this.team.coachFirstName,
+      coachLastName: this.team.coachLastName,
+      coachEmail: this.team.coachEmail,
+      altCoachFirstName: this.team.altCoachFirstName,
+      altCoachLastName: this.team.altCoachLastName,
+      altCoachEmail: this.team.altCoachEmail,
+      city: this.team.city,
+      state: this.team.state,
+    });
+  }
+
+
 
 }
