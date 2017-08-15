@@ -26,13 +26,17 @@ export class TeamEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
-    this.route.params.subscribe(
-      params => {
-        const id = +params['id'];
-        this.getTeam(id);
-      }
-    );
-
+    // this.route.params.subscribe(
+    //   params => {
+    //     const id = +params['id'];
+    //     this.getTeam(id);
+    //   }
+    // );
+    this.route.data.subscribe(data => {
+      this.team = data['team'];
+      this.populateForm();
+     console.log('data', data);
+    })
   }
 
   save() {
@@ -46,7 +50,7 @@ export class TeamEditComponent implements OnInit {
           this.router.navigate(['/teams']);
         },
         err => {
-        this.err = <any>err
+          this.err = <any>err
           console.log(err);
         }
       );
@@ -54,21 +58,20 @@ export class TeamEditComponent implements OnInit {
 
 
   }
-  getTeam(id: number) {
-    // Get all teams
-    this.teamService.getTeam(id)
-      .subscribe(
-      team => {
-        this.team = team
-        this.populateForm();
-        //console.log(team);
-      }, // Bind to view
-      err => {
-        // Log errors if any
-        console.log(err);
-      });
-
-  }
+  // getTeam(id: number) {
+  //   // Get all teams
+  //   this.teamService.getTeam(id)
+  //     .subscribe(
+  //     team => {
+  //       this.team = team
+  //       this.populateForm();
+  //       //console.log(team);
+  //     }, // Bind to view
+  //     err => {
+  //       // Log errors if any
+  //       console.log(err);
+  //     });
+  //     }
 
   buildForm() {
     this.teamEditForm = this.formBuilder.group({

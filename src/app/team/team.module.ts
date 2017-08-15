@@ -6,6 +6,7 @@ import { MaterialModule } from '@angular/material';
 import { TeamListingComponent } from './team-listing/team-listing.component';
 import { TeamEditComponent } from './team-edit/team-edit.component';
 import { TeamService } from './team.service';
+import { TeamResolver } from "app/team/team-resolver.service";
 
 @NgModule({
   imports: [
@@ -15,7 +16,10 @@ import { TeamService } from './team.service';
     MaterialModule,
     RouterModule.forChild([
       { path: '', component: TeamListingComponent },
-      { path: ':id/edit', component: TeamEditComponent }
+      {
+        path: ':id/edit', component: TeamEditComponent,
+        resolve: { team: TeamResolver }
+      }
     ])
   ],
   declarations: [
@@ -23,7 +27,8 @@ import { TeamService } from './team.service';
     TeamEditComponent
   ],
   providers: [
-    TeamService
+    TeamService,
+    TeamResolver
   ]
 })
 export class TeamModule { }
