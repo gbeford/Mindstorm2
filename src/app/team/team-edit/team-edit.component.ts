@@ -35,7 +35,6 @@ export class TeamEditComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.team = data['team'];
       this.populateForm();
-     console.log('data', data);
     })
   }
 
@@ -79,7 +78,7 @@ export class TeamEditComponent implements OnInit {
       teamNumber: ['', [<any>Validators.required]],
       coachFirstName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
       coachLastName: ['', [<any>Validators.required, <any>Validators.maxLength(25)]],
-      coachEmail: ['', [<any>Validators.required, <any>Validators.email]],
+      coachEmail: ['', [<any>Validators.required]],
       altCoachFirstName: [''],
       altCoachLastName: [''],
       altCoachEmail: [''],

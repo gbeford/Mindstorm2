@@ -179,10 +179,10 @@
   </div>
 </div>-->
 
-<div *ngFor="let team of teamList">
-{{team.teamId}} - {{team.teamName}} - {{team.teamNumber}} -
- <a [routerLink]="['/teams', team.teamId, 'edit']" md-menu-item>  <md-icon>create </md-icon></a>
+
+<div *ngFor="let team of teamList" style="padding:0px 20px;">
+  <a [routerLink]="['/teams', team.teamId, 'edit']">
+    <md-icon>create </md-icon>
+  </a>
+  {{team.teamName}} - {{team.teamNumber}}
 </div>
-
-
-
