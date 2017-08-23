@@ -4,6 +4,8 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 // import { Configuration } from '../app.constants';
 import { MatchScoringComponent } from './match-scoring.component';
+import { environment } from 'environments/environment';
+import { IMatchDefinition } from 'app/match/model/matchDefinition';
 
 @Injectable()
 
@@ -11,14 +13,36 @@ export class MatchService {
     // private actionUrl: string;
     // private headers: Headers;
 
-    constructor(
-        private http: Http
-    ) { }
 
-    // getUser() {
-    //     return this.http.get(`https://conduit.productionready.io/api/profiles/eric`)
-    //         .map((res: Response) => res.json());
-    // }
+    private baseUrl = environment.matchDefinitionApiUrl;
+
+        constructor(private http: Http) { }
 
 
-}
+        // Fetch all teams
+        public getDefinition(): Observable<IMatchDefinition[]> {
+            // ...using get request
+            const comps = this.http.get(this.baseUrl)
+                // ...and calling .json() on the response to return data
+                .map((res: Response) =>
+                    res.json()
+                )
+                .catch(this.handleError); // ...errors if any
+            console.log(comps);
+            return comps;
+            // ...errors if any
+        }
+
+
+
+        private handleError(error: Response): Observable<any> {
+            // in a real world app, we may send the server to some remote logging infrastructure
+            // instead of just logging it to the console
+            console.error(error);
+            return Observable.throw(error.json().error || 'Server error');
+        }
+
+
+
+
+    }

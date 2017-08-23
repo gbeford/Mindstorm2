@@ -17,6 +17,7 @@ import { HomeComponent } from 'app/home/home.component';
     },
       { path: 'match', component: MatchScoringComponent },
       // { path: 'teamList', component: TeamListingComponent },
+      //{ path: 'matchHard', component: MatchScoringComponent },
       { path: '**', component: PageNotFoundComponent }
     ]),
   ],
