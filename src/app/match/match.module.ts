@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
@@ -8,6 +9,7 @@ import { MatchScoringComponent } from 'app/match/match-scoring.component';
 
 
 @NgModule({
+
     imports: [
         CommonModule,
         FormsModule,
