@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { MatchService } from './match.service';
 import { IMission } from 'app/match/model/mission';
 
+
 @Component({
   selector: 'app-match-scoring',
   providers: [MatchService],
