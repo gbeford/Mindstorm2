@@ -13,10 +13,10 @@ import { MatchScoringComponent } from 'app/match/match-scoring.component';
         FormsModule,
         ReactiveFormsModule,
         MaterialModule,
-        RouterModule.forChild([
-            { path: '', component: MatchScoringComponent},
+        // RouterModule.forChild([
+        //     { path: '', component: MatchScoringComponent},
 
-        ])
+        // ])
     ],
     declarations: [
 

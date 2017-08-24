@@ -2,20 +2,38 @@
   <div class="text-center">
     <h1>Mindstorm {{title}} Form</h1>
   </div>
-
-  <form class="form-horizontal" *ngIf="matchScoringForm" [formGroup]="matchScoringForm" novalidate  >
+  {{missions | json}}
+  <form class="form-horizontal" *ngIf="matchScoringForm" [formGroup]="matchScoringForm" novalidate>
     <div class="row">
-      <div class="category col-lg-12" *ngFor="let definition of definitions">
-        <div class="col-md-8 col-lg-4 col-lg-offset-5 col-md-offset-3">
-          <p> {{definition.missionDescription}}</p>
+      <div *ngFor="let mission of missions">
+        <div class="category col-lg-12">
+          <div class="col-md-8 col-lg-4 col-lg-offset-5 col-md-offset-3">
+            <p> {{mission.missionDescription}}</p>
+          </div>
         </div>
-      </div>
-      <!-- <div class="col-sm-6 col-lg-4" >
-        <div class="form-group">
-          <label for="cat1" class="col-md-4 control-label">{{definition.questionDescription}}</label>
-          <div class="col-md-5"> -->
+        <div class="col-sm-6 col-lg-4" *ngFor="let item of mission.missionItems">
+          <div class="form-group">
+            <label for="cat1" class="col-md-4 control-label">{{item.questionDescription}}</label>
+            <div class="col-md-5">
 
-            <!-- <div class="btn-group" data-toggle="buttons">
+
+              <div [ngSwitch]="item.type">
+                <div *ngSwitchCase="string">
+                  string
+
+                </div>
+                <div *ngSwitchCase="bool">
+                  bool
+
+                </div>
+                <div *ngSwitchCase="range">
+
+                  range
+                </div>
+
+              </div>
+
+              <!-- <div class="btn-group" data-toggle="buttons">
               <label class="btn btn-primary active">
                   <input type="radio" name="options"  formControlName="" id="option1" autocomplete="off" checked> None
               </label>
@@ -24,16 +42,15 @@
                   </label>
               <label class="btn btn-primary">
               <input type="radio" name="options" id="option3" autocomplete="off"> T2
-                  </label> -->
-            <!-- </div>
+                  </label>
+           </div> -->
+            </div>
           </div>
-        </div> -->
-
-
+        </div>
+      </div>
     </div>
     <!--row div-->
     <!-- /.row this actually does not appear to be needed with the form-horizontal -->
   </form>
-
 </div>
 <!-- /.container -->

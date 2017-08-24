@@ -5,7 +5,8 @@ import { Observable } from 'rxjs/Observable';
 // import { Configuration } from '../app.constants';
 import { MatchScoringComponent } from './match-scoring.component';
 import { environment } from 'environments/environment';
-import { IMatchDefinition } from 'app/match/model/matchDefinition';
+//import { IMatchDefinition } from 'app/match/model/matchDefinition';
+import { IMission } from 'app/match/model/mission';
 
 @Injectable()
 
@@ -14,13 +15,13 @@ export class MatchService {
     // private headers: Headers;
 
 
-    private baseUrl = environment.matchDefinitionApiUrl;
+    private baseUrl = environment.missionApiUrl;
 
         constructor(private http: Http) { }
 
 
         // Fetch all teams
-        public getDefinition(): Observable<IMatchDefinition[]> {
+        public getMission(): Observable<IMission[]> {
             // ...using get request
             const comps = this.http.get(this.baseUrl)
                 // ...and calling .json() on the response to return data
@@ -28,7 +29,7 @@ export class MatchService {
                     res.json()
                 )
                 .catch(this.handleError); // ...errors if any
-            console.log(comps);
+           // console.log(comps);
             return comps;
             // ...errors if any
         }

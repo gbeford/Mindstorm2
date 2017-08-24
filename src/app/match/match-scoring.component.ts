@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatchService } from './match.service';
-import { IMatchDefinition } from 'app/match/model/matchDefinition';
+import { IMission } from 'app/match/model/mission';
 
 @Component({
   selector: 'app-match-scoring',
@@ -13,7 +13,7 @@ import { IMatchDefinition } from 'app/match/model/matchDefinition';
 
 export class MatchScoringComponent implements OnInit {
   title = 'Match';
- definitions: IMatchDefinition[];
+  missions: IMission[];
  public matchScoringForm: FormGroup;
 
   constructor(private matchService: MatchService,
@@ -22,15 +22,15 @@ export class MatchScoringComponent implements OnInit {
 
   ngOnInit() {
     // Load comments
-    this.getList();
+    this.getMissons();
   }
 
-  getList() {
+  getMissons() {
     // Get all teams
-    this.matchService.getDefinition()
+    this.matchService.getMission()
     .subscribe(
-      definitions => {
-        this.definitions = definitions;
+      missions => {
+        this.missions = missions;
         this.matchScoringForm = this.createForm();
         }, // Bind to view
       err => {
@@ -41,8 +41,8 @@ export class MatchScoringComponent implements OnInit {
 
   createForm() {
     const group = this.fb.group({});
-    this.definitions.forEach(control =>
-      group.addControl(control.MissionDescription, this.fb.control(''))
+    this.missions.forEach(control =>
+      group.addControl(control.missionDescription, this.fb.control(''))
     );
     return group;
   }
