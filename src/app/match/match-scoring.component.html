@@ -15,40 +15,35 @@
           <div class="form-group">
             <label for="cat1" class="col-md-4 control-label">{{item.questionDescription}}</label>
             <div class="col-md-5">
+
               <div [ngSwitch]="item.type">
                 <div *ngSwitchCase="'string'">
-                  string Hi
-                  <!-- <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary active">
-                        <input type="radio" name="options"  formControlName="" id="option1" autocomplete="off" checked> None
-                    </label>
-                    <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> T1
+                  <div class="btn-group" data-toggle="buttons">
+                    <ng-container *ngFor="let list of item.optionListArray">
+                      <label class="btn btn-primary">
+                    <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off">{{list}}
                         </label>
-                    <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> T2
-                        </label>
-                  </div> -->
+                    </ng-container>
+                  </div>
                 </div>
 
                 <div *ngSwitchCase="'bool'">
-                  <div class="col-md-8">
-                    <div class="btn-group" data-toggle="buttons">
-                      <label class="btn btn-primary active">
-                              <input type="radio" name="options" id="option1" autocomplete="off" checked> Yes
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                              <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off"> Yes
                           </label>
-                      <label class="btn btn-primary">
-                          <input type="radio" name="options" id="option2" autocomplete="off">No
+                    <label class="btn btn-primary">
+                          <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off">No
                               </label>
-                    </div>
                   </div>
                 </div>
+
                 <div *ngSwitchCase="'range'">
                   range
                 </div>
                 <div *ngSwitchDefault>Nothing Found.</div>
-
               </div>
+
 
               <!-- <div class="btn-group" data-toggle="buttons">
               <label class="btn btn-primary active">
@@ -61,6 +56,7 @@
               <input type="radio" name="options" id="option3" autocomplete="off"> T2
                   </label>
            </div> -->
+
             </div>
           </div>
         </div>

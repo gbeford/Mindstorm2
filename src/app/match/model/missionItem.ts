@@ -10,5 +10,5 @@ export interface IMissionItem {
     optionList?: (null | string)[];
     sortOrder: number; // puts question on the page in order
     missionId: number;
-
+    optionListArray: string[];
 }
