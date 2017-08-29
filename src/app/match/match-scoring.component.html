@@ -2,7 +2,7 @@
   <div class="text-center">
     <h1>Mindstorm {{title}} Form</h1>
   </div>
-  {{missions | json}}
+  <!-- {{missions | json}} -->
   <form class="form-horizontal" *ngIf="matchScoringForm" [formGroup]="matchScoringForm" novalidate>
     <div class="row">
       <div *ngFor="let mission of missions">
@@ -15,7 +15,6 @@
           <div class="form-group">
             <label for="cat1" class="col-md-4 control-label">{{item.questionDescription}}</label>
             <div class="col-md-5">
-
               <div [ngSwitch]="item.type">
                 <div *ngSwitchCase="'string'">
                   <div class="btn-group" data-toggle="buttons">
@@ -39,24 +38,16 @@
                 </div>
 
                 <div *ngSwitchCase="'range'">
-                  range
+                  <div class="btn-group" data-toggle="buttons">
+                    <ng-container *ngFor="let ranges of item.rangeListArray">
+                    <label class="btn btn-primary active">
+                              <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off"> {{ranges}}
+                          </label>
+                        </ng-container>
+                  </div>
                 </div>
                 <div *ngSwitchDefault>Nothing Found.</div>
               </div>
-
-
-              <!-- <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-primary active">
-                  <input type="radio" name="options"  formControlName="" id="option1" autocomplete="off" checked> None
-              </label>
-              <label class="btn btn-primary">
-              <input type="radio" name="options" id="option2" autocomplete="off"> T1
-                  </label>
-              <label class="btn btn-primary">
-              <input type="radio" name="options" id="option3" autocomplete="off"> T2
-                  </label>
-           </div> -->
-
             </div>
           </div>
         </div>

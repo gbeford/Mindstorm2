@@ -15,25 +15,27 @@ import { IMission } from 'app/match/model/mission';
 export class MatchScoringComponent implements OnInit {
   title = 'Match';
   missions: IMission[];
- public matchScoringForm: FormGroup;
+  public matchScoringForm: FormGroup;
 
   constructor(private matchService: MatchService,
-              private fb: FormBuilder) { }
+    private fb: FormBuilder) { }
 
 
   ngOnInit() {
     // Load comments
     this.getMissons();
+
+
   }
 
   getMissons() {
     // Get all teams
     this.matchService.getMission()
-    .subscribe(
+      .subscribe(
       missions => {
         this.missions = missions;
         this.matchScoringForm = this.createForm();
-        }, // Bind to view
+      }, // Bind to view
       err => {
         // Log errors if any
         console.log(err);
@@ -65,5 +67,25 @@ export class MatchScoringComponent implements OnInit {
     //   );
     // }
   }
+
+  // getRange(missions){
+  //   //console.log(missions);
+  //   var ranges = [];
+  //   for (var i = 0; i < missions.length; i++) {
+  //     for (var r = 0; r < missions[i].missionItems.length; r++) {
+  //       //console.log('mission item', missions[i].missionItems[r]);
+  //       if (missions[i].missionItems[r].type == "range") {
+
+  //         console.log(missions[i].missionItems[r].maxRange);
+  //         for (var x = missions[i].missionItems[r].minRange; x <= missions[i].missionItems[r].maxRange; x++) {
+  //           ranges.push(x);
+  //         }
+  //         console.log('range ', ranges)
+  //       }
+
+  //     }
+
+  //   }
+  // }
 
 }
