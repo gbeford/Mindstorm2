@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { MatchService } from 'app/match/match.service';
 import { MatchScoringComponent } from 'app/match/match-scoring.component';
+import { AddMissionDetailsComponent } from './add-mission-details/add-mission-details.component';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { MatchScoringComponent } from 'app/match/match-scoring.component';
     ],
     declarations: [
 
-    ],
+    AddMissionDetailsComponent],
     providers: [
         MatchService,
 

@@ -1,0 +1,88 @@
+<div class='container'>
+  <div class='panel panel-primary dialog-panel'>
+    <div class='panel-heading'>
+      <h5>Entry New Game Form</h5>
+    </div>
+    <div class='panel-body'>
+      <form class='form-horizontal' [formGroup]="missionEditForm" novalidate (ngSubmit)="save()">
+
+
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='mission-desc'>Mission Description</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='mission-desc' placeholder='Mission Description' type='text' formControlName="missionDesc"
+                required>
+              <!-- <div [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
+        Team number is required !
+      </div> -->
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='mission-order'>Mission Order</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='mission-order' placeholder='Mission Order' type='text' formControlName="missionOrder" required>
+              <!-- <div [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
+        Team number is required !
+      </div> -->
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='game-year'>Game Year</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='game-year' placeholder='Game Year' type='text' formControlName="gameYear" required>
+              <!-- <div [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
+        Team number is required !
+      </div> -->
+            </div>
+          </div>
+        </div>
+
+        --------------------------------------------------------------------------------
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='question-desc'>Question Description</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='question-desc' placeholder='Question Description' type='text' formControlName="questionDesc"
+                required>
+              <!-- <div [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
+Team number is required !
+</div> -->
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='question-order'>Question Order</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <input class='form-control' id='question-order' placeholder='Question Order' type='text' formControlName="questionOrder"
+                required>
+              <!-- <div [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
+Team number is required !
+</div> -->
+            </div>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label class='control-label col-md-2 col-md-offset-2' for='type'>Type</label>
+          <div class='col-md-2'>
+            <div class='form-group internal'>
+              <select class='form-control' name='type' formControlName="type">
+      <option *ngFor="let type of types" [value]="type" >{{type}}</option>
+     </select>
+              <!-- <div [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
+Team number is required !
+</div> -->
+            </div>
+          </div>
+        </div>
+
+        <button> submit</button>
+      </form>
+    </div>
+  </div>
+</div>
