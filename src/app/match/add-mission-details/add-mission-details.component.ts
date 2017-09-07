@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormArray, FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Type } from 'app/match/model/type';
+import { ArrayType } from '@angular/compiler/src/output/output_ast';
+//import { AddMissionSubComponent } from './add-mission-sub.component';
 
 @Component({
   selector: 'app-add-mission-details',
@@ -9,8 +11,10 @@ import { Type } from 'app/match/model/type';
 })
 export class AddMissionDetailsComponent implements OnInit {
 
+  @Input() inputArray: ArrayType[];
+  missionEditForm: FormGroup;
 
-  public missionEditForm: FormGroup;
+  //dropdown
   selectedType: Type;
   types = [
     new Type(-1, 'Please select'),
@@ -19,10 +23,9 @@ export class AddMissionDetailsComponent implements OnInit {
     new Type(3, 'Bool'),
   ];
 
-  constructor(private formBuilder: FormBuilder,) { }
+  constructor(private formBuilder: FormBuilder, ) { }
 
   ngOnInit() {
-
     this.selectedType = this.types[0];
     this.buildForm();
   }
@@ -33,18 +36,69 @@ export class AddMissionDetailsComponent implements OnInit {
   }
 
   buildForm() {
-    this.missionEditForm = this.formBuilder.group({
-      missionDesc: [''],
-      missionOrder: [''],
-      gameYear: [''],
-      questionDesc: [''],
-      questionOrder: [''],
-      type: [''],
-      optionList: [''],
-      minRange: [''],
-      maxRange: [''],
+    let newForm = this.formBuilder.group({
+      missionDesc: ['InitialValue', [Validators.required]],
+      missionOrder: ['InitialValue'],
+      gameYear: ['InitialValue'],
+      formArray: this.formBuilder.array([])
+    });
+
+    const arrayControl = <FormArray>newForm.controls['formArray'];
+    this.inputArray.forEach(item => {
+      let newGroup = this.formBuilder.group({
+        questionDesc: ['InitialValue', [Validators.required]],
+        questionOrder: ['InitialValue', [Validators.maxLength(1)]],
+        type: ['InitialValue'],
+        optionList: ['InitialValue'],
+        minRange: ['InitialValue', [Validators.maxLength(1)]],
+        maxRange: ['InitialValue', [Validators.maxLength(1)]],
+      });
+      arrayControl.push(newGroup);
+    });
+
+    this.missionEditForm = newForm;
+  }
+
+  initSubForm() {
+    // initialize Sub form
+    return this.formBuilder.group({
+      questionDesc: ['InitialValue', [Validators.required]],
+      questionOrder: ['InitialValue', [Validators.maxLength(1)]],
+      type: ['InitialValue'],
+      optionList: ['InitialValue'],
+      minRange: ['InitialValue', [Validators.maxLength(1)]],
+      maxRange: ['InitialValue', [Validators.maxLength(1)]],
     });
   }
+
+  addInput(): void {
+    const arrayControl = <FormArray>this.missionEditForm.controls['formArray'];
+   // let newGroup =this.initSubForm();
+    let newGroup = this.formBuilder.group({
+      questionDesc: ['InitialValue', [Validators.required]],
+      questionOrder: ['InitialValue', [Validators.maxLength(1)]],
+      type: ['InitialValue'],
+      optionList: ['InitialValue'],
+      minRange: ['InitialValue', [Validators.maxLength(1)]],
+      maxRange: ['InitialValue', [Validators.maxLength(1)]],
+    });
+    arrayControl.push(newGroup);
+  }
+
+  delInput(index: number): void {
+    const arrayControl = <FormArray>this.missionEditForm.controls['formArray'];
+    arrayControl.removeAt(index);
+  }
+
+  onSubmit(): void {
+    console.log(this.missionEditForm.value);
+    // Your form value is outputted as a JavaScript object.
+    // Parse it as JSON or take the values necessary to use as you like
+
+  }
+
+
+
 
 
 
