@@ -4,7 +4,7 @@
       <div class='panel-heading'>
         <h5>Entry New Game Form</h5>
       </div>
-      <div class='panel-body'>
+
         <form class='form-horizontal' [formGroup]="missionEditForm" novalidate (ngSubmit)="save()">
 
           <div class='form-group'>
@@ -58,7 +58,7 @@
           <button type="submit" [disabled]="!missionEditForm.valid">Save</button>
 
         </form>
-      </div>
+
     </div>
   </div>
 </div>
