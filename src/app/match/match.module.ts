@@ -6,8 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { MatchService } from 'app/match/match.service';
 import { MatchScoringComponent } from 'app/match/match-scoring.component';
-import { AddMissionDetailsComponent } from './add-mission-details/add-mission-details.component';
-import { AddMissionSubComponent } from './add-mission-details/add-mission-sub.component';
 
 
 @NgModule({
@@ -22,14 +20,10 @@ import { AddMissionSubComponent } from './add-mission-details/add-mission-sub.co
 
         // ])
     ],
-    declarations: [
+    declarations: [],
 
-    AddMissionDetailsComponent,
-
-    AddMissionSubComponent],
     providers: [
         MatchService,
-
     ]
 })
 export class MatchModule { }

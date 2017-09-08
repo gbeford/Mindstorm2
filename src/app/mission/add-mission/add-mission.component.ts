@@ -5,13 +5,13 @@ import { ArrayType } from '@angular/compiler/src/output/output_ast';
 //import { AddMissionSubComponent } from './add-mission-sub.component';
 
 @Component({
-  selector: 'app-add-mission-details',
-  templateUrl: './add-mission-details.component.html',
-  styleUrls: ['./add-mission-details.component.css']
+  selector: 'app-add-mission',
+  templateUrl: './add-mission.component.html',
+  styleUrls: ['./add-mission.component.css']
 })
-export class AddMissionDetailsComponent implements OnInit {
+export class AddMissionComponent implements OnInit {
 
-  @Input() inputArray: ArrayType[];
+  // @Input() inputArray: ArrayType[];
   missionEditForm: FormGroup;
 
   //dropdown
@@ -36,27 +36,12 @@ export class AddMissionDetailsComponent implements OnInit {
   }
 
   buildForm() {
-    let newForm = this.formBuilder.group({
+    this.missionEditForm = this.formBuilder.group({
       missionDesc: ['InitialValue', [Validators.required]],
       missionOrder: ['InitialValue'],
       gameYear: ['InitialValue'],
-      formArray: this.formBuilder.array([])
+      missionItems: this.formBuilder.array([this.initSubForm()])
     });
-
-    const arrayControl = <FormArray>newForm.controls['formArray'];
-    this.inputArray.forEach(item => {
-      let newGroup = this.formBuilder.group({
-        questionDesc: ['InitialValue', [Validators.required]],
-        questionOrder: ['InitialValue', [Validators.maxLength(1)]],
-        type: ['InitialValue'],
-        optionList: ['InitialValue'],
-        minRange: ['InitialValue', [Validators.maxLength(1)]],
-        maxRange: ['InitialValue', [Validators.maxLength(1)]],
-      });
-      arrayControl.push(newGroup);
-    });
-
-    this.missionEditForm = newForm;
   }
 
   initSubForm() {
@@ -72,7 +57,7 @@ export class AddMissionDetailsComponent implements OnInit {
   }
 
   addInput(): void {
-    const arrayControl = <FormArray>this.missionEditForm.controls['formArray'];
+    const arrayControl = <FormArray>this.missionEditForm.controls['missionItems'];
    // let newGroup =this.initSubForm();
     let newGroup = this.formBuilder.group({
       questionDesc: ['InitialValue', [Validators.required]],
@@ -86,7 +71,7 @@ export class AddMissionDetailsComponent implements OnInit {
   }
 
   delInput(index: number): void {
-    const arrayControl = <FormArray>this.missionEditForm.controls['formArray'];
+    const arrayControl = <FormArray>this.missionEditForm.controls['missionItems'];
     arrayControl.removeAt(index);
   }
 

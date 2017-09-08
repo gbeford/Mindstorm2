@@ -18,6 +18,7 @@ import { TeamModule } from './team/team.module';
 import { MatchModule } from './match/match.module';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { MissionModule } from './mission/mission.module';
 
 
 
@@ -40,7 +41,8 @@ import { AdminComponent } from './admin/admin.component';
     MaterialModule,
     AppRoutingModule,
     TeamModule,
-    MatchModule
+    MatchModule,
+    MissionModule
     // RouterModule
   ],
   providers: [],
