@@ -1,40 +1,49 @@
-<div class='container'>
+<!-- <div class='container'>
+<div class="row"> -->
   <div [formGroup]="AddMissionItemForm">
-    <div class="panel-body">
-      <div class="form-group col-xs-6">
-        <label for='question-desc'>Question</label>
-        <input class='form-control' placeholder='Question Description' type='text' formControlName="questionDesc">
-        <small [hidden]="AddMissionItemForm.controls.questionDesc.valid" class="text-danger">
-      Question is required
-    </small>
-      </div>
 
-      <div class="form-group col-xs-5 .col-xs-offset-3">
-        <label for='question-order'>Question Order</label>
-        <input class='form-control' id='question-order' placeholder='Question Order' type='text' formControlName="questionOrder">
-      </div>
+    <div class="form-group col-md-5">
+      <label for='question-desc'>Question</label>
+      <input class='form-control' placeholder='Question Description' type='text' formControlName="questionDesc">
+      <small [hidden]="AddMissionItemForm.controls.questionDesc.valid" class="text-danger">
+            Question is required
+          </small>
+    </div>
 
-      <div class="form-group col-xs-6">
-        <label for='type'>Type</label>
-        <select class='form-control' name='type' formControlName="type" (input)="onInput($event)">
-        <option *ngFor="let type of types" [value]="type.id" >{{type.name}}</option>
+    <div class="form-group col-md-2">
+      <label for='question-order'>Question Order</label>
+      <input class='form-control' id='question-order' placeholder='Question Order' type='text' formControlName="questionOrder">
+      <small [hidden]="AddMissionItemForm.controls.questionDesc.valid" class="text-danger">
+              Order is required
+            </small>
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for='type'>Type</label>
+      <select class='form-control' name='type' formControlName="type" (input)="onInput($event)">
+        <option *ngFor="let type of types" [value]="type.name" >{{type.name}}</option>
     </select>
-      </div>
+      <small [hidden]="AddMissionItemForm.controls.questionDesc.valid" class="text-danger">
+        Type is required
+      </small>
+    </div>
+  <!-- </div>
+  <div class="row"> -->
+    <div class="form-group col-md-5">
+      <label for='option-list'>Option List</label>
+      <input class='form-control' id='option-list' placeholder='Option List' type='text' formControlName="optionList">
+    </div>
 
-      <div class="form-group col-xs-6">
-        <label for='option-list'>Option List</label>
-        <input class='form-control' id='option-list' placeholder='Option List' type='text' formControlName="optionList">
-      </div>
+    <div class="form-group col-md-2">
+      <label for='min-range'>Min Range</label>
+      <input class='form-control' id='min-range' placeholder='Min Range' type='text' formControlName="minRange">
+    </div>
 
-      <div class="form-group col-xs-6">
-        <label for='min-range'>Min Range</label>
-        <input class='form-control' id='min-range' placeholder='Min Range' type='text' formControlName="minRange">
-      </div>
-
-      <div class="form-group col-xs-6">
-        <label for='max-range'>Max Range</label>
-        <input class='form-control' id='max-range' placeholder='Max Range' type='text' formControlName="maxRange">
-      </div>
+    <div class="form-group col-md-2">
+      <label for='max-range'>Max Range</label>
+      <input class='form-control' id='max-range' placeholder='Max Range' type='text' formControlName="maxRange">
     </div>
   </div>
-</div>
+
+<!-- </div>
+ </div> -->
