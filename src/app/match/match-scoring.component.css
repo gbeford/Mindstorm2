@@ -3,11 +3,27 @@ body {
   padding-top: 50px;
 }
 
-.category{
+/* .category{
   background-color:#337ab7;
   color:whitesmoke;
   padding-top: 5px;
-}
+} */
 .form-group {
     margin-top: 15px;
 }
+.panel-heading {
+  font-weight: 700;
+  font-size: 15px;
+  background-color:#cdcdcd;
+  text-align: center;
+}
+
+.btn-primary.active, .btn-primary:active{
+  background-color: #0096a7;
+  border-color: #037E8B;
+}
+.btn-primary{
+  background-color: #01adc3;
+  border-color: #0096a7;
+}
+

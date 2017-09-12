@@ -1,16 +1,30 @@
 <div class="container-fluid">
-  <div class="text-center">
-    <h1>Mindstorm {{title}} Form</h1>
-  </div>
+    <div class="row">
+
   <!-- {{missions | json}} -->
   <form class="form-horizontal" *ngIf="matchScoringForm" [formGroup]="matchScoringForm" novalidate>
-    <div class="row">
-      <div *ngFor="let mission of missions">
-        <div class="category col-lg-12">
-          <div class="col-md-8 col-lg-4 col-lg-offset-5 col-md-offset-3">
-            <p> {{mission.missionDescription}}</p>
+      <div class="panel panel-default">
+          <div class='panel-heading'>
+            <h5>{{title}}</h5>
           </div>
+          <div class="panel-body">
+
+      <div class='form-group col-md-2'>
+        <label for='team'>Team</label>
+        <input class='form-control' id='team' placeholder='Team' type='text' formControlName="team">
+      </div>
+
+      <div class='form-group col-md-2'>
+        <label for='table-number'>Table Number</label>
+        <input class='form-control' id='table-number' placeholder='Table Number' type='text' formControlName="tableNumber">
+      </div>
+
+
+      <div *ngFor="let mission of missions">
+        <div class="panel-heading col-lg-12">
+            <p> {{mission.missionDescription}}</p>
         </div>
+
         <div class="col-sm-6 col-lg-4" *ngFor="let item of mission.missionItems">
           <div class="form-group">
             <label for="cat1" class="col-md-4 control-label">{{item.questionDescription}}</label>
@@ -47,14 +61,22 @@
                   </div>
                 </div>
                 <div *ngSwitchDefault>Nothing Found.</div>
+
               </div>
+
             </div>
           </div>
         </div>
+
       </div>
+      <div class='col-md-12'>
+          <button type="submit" [disabled]="!missionEditForm.valid">Save</button>
+        </div>
     </div>
-    <!--row div-->
+  </div>
     <!-- /.row this actually does not appear to be needed with the form-horizontal -->
   </form>
+</div>
+<!--row div-->
 </div>
 <!-- /.container -->

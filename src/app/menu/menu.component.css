@@ -8,3 +8,9 @@
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
+.mat-toolbar, .mat-menu-content,  .mat-menu-item{
+    background-color: #00c8d7;
+    /* color:  #cdcdcd; b7b7b7*/
+    color: #777;
+}
+

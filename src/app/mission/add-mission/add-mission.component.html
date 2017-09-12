@@ -4,7 +4,7 @@
     <form [formGroup]="missionEditForm" novalidate (ngSubmit)="save()">
       <div class="panel panel-default">
         <div class='panel-heading'>
-          <h5>Entry New Game Form</h5>
+          <h5 class="mission-header">Enter New Game</h5>
         </div>
         <div class="panel-body">
           <div style="padding:2% 4%">
@@ -31,7 +31,7 @@
           <div formArrayName="missionItems" style="padding:5% 5% 0">
             <div *ngFor="let control of missionEditForm.controls['missionItems'].controls; let i = index" class="panel panel-default">
               <div class="panel-heading">
-                <span>Mission</span>
+                <span class="mission-header">Mission</span>
               </div>
               <div style="padding:10px;">
               <span class="glyphicon glyphicon-remove pull-right" *ngIf="missionEditForm.controls.missionItems.controls.length > 1" (click)="delInput(i)"></span>

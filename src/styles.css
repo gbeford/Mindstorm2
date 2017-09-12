@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+menu-teal { background-color: #00c8d7; }
+dark-teal { background-color:#0096a7; }
+
+teelish { background-color:#01adc3; }
+coral { background-color:#f68170; }
+
+.panel-heading {
+    font-weight: 700;
+    font-size: 15px;
+    background-color:#cdcdcd;
+    text-align: center;
+  }

@@ -13,7 +13,7 @@ import { IMission } from 'app/match/model/mission';
 
 
 export class MatchScoringComponent implements OnInit {
-  title = 'Match';
+  title = 'Judge Match';
   missions: IMission[];
   public matchScoringForm: FormGroup;
 
@@ -42,8 +42,14 @@ export class MatchScoringComponent implements OnInit {
       });
   }
 
+
+
   createForm() {
-    const group = this.fb.group({});
+    const group = this.fb.group({
+      team: [''],
+      tableNumber: ['']
+    });
+
     this.missions.forEach(control =>
       group.addControl(control.missionDescription, this.fb.control(''))
     );

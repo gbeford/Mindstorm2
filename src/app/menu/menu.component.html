@@ -1,4 +1,4 @@
-<md-toolbar color="primary">
+<md-toolbar color="menu-teal">
 
   <button md-icon-button [mdMenuTriggerFor]="appMenu">
    <md-icon>menu</md-icon>
@@ -13,7 +13,7 @@
 
     <a [routerLink]="['/addMission']" md-menu-item>
       <md-icon>create </md-icon>
-     <span>Add New Mission</span>
+     <span>Add Mission</span>
     </a>
 
     <a [routerLink]="['/matchHard']" md-menu-item>
@@ -21,13 +21,13 @@
     </a>
     <a [routerLink]="['/match']" md-menu-item>
       <md-icon>create </md-icon>
-      <!--<span>Match</span> -->
+      <span>Match</span>
     </a>
 
 
     <a [routerLink]="['/teams']" md-menu-item>
       <md-icon>view_list </md-icon>
-      <!--<span>Team List</span> -->
+      <span>Team List</span>
     </a>
 
     <a [routerLink]="['/teams', 0, 'edit']" md-menu-item>

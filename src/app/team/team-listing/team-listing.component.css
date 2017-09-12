@@ -1,3 +1,8 @@
+.edit {
+  color: #0096a7
+}
+
+/* ------------------------------------------------------------------*/
 .indent-small {
   margin-left: 5px;
 }
@@ -40,3 +45,5 @@ label.control-label {
   color:whitesmoke;
   padding-top: 5px;
 }
+
+
