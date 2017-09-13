@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { MdTableModule} from '@angular/material';
-import {SignaturePad} from 'angular2-signaturepad/signature-pad';
+// import { SignaturePadModule } from 'angular2-signaturepad';
 // import { RouterModule } from '@angular/router';
 
 
@@ -31,7 +31,6 @@ import { MissionModule } from './mission/mission.module';
     MenuComponent,
     HomeComponent,
     AdminComponent,
-    SignaturePad,
   ],
   imports: [
     BrowserModule,

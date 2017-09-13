@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import {SignaturePad} from 'angular2-signaturepad/signature-pad';
 
 @Component({
@@ -7,7 +7,7 @@ import {SignaturePad} from 'angular2-signaturepad/signature-pad';
   styleUrls: ['./signature.component.css'],
 })
 
-export class SignatureComponent implements OnInit {
+export class SignatureComponent implements OnInit, AfterViewInit {
 
   @ViewChild(SignaturePad) public signaturePad: SignaturePad;
 

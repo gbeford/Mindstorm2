@@ -17,6 +17,7 @@ export class MatchScoringComponent implements OnInit {
   title = 'Judge Match';
   missions: IMission[];
   public matchScoringForm: FormGroup;
+
   @ViewChildren(SignatureComponent) public sigs: QueryList<SignatureComponent>;
 
 
@@ -26,8 +27,6 @@ export class MatchScoringComponent implements OnInit {
   ngOnInit() {
     // Load comments
     this.getMissons();
-
-
   }
 
   getMissons() {
@@ -43,8 +42,6 @@ export class MatchScoringComponent implements OnInit {
         console.log(err);
       });
   }
-
-
 
   createForm() {
     const group = this.fb.group({
