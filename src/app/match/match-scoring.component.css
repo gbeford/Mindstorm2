@@ -11,12 +11,12 @@ body {
 .form-group {
     margin-top: 15px;
 }
-.panel-heading {
+/* .panel-heading {
   font-weight: 700;
   font-size: 15px;
   background-color:#cdcdcd;
   text-align: center;
-}
+} */
 
 .btn-primary.active, .btn-primary:active{
   background-color: #0096a7;

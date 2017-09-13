@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
+import { MdTableModule} from '@angular/material';
 // import { RouterModule } from '@angular/router';
 
 
@@ -25,7 +25,6 @@ import { MissionModule } from './mission/mission.module';
 @NgModule({
   declarations: [
     AppComponent,
-    //CommonModule,
     MatchScoringComponent,
     PageNotFoundComponent,
     MenuComponent,
@@ -39,6 +38,7 @@ import { MissionModule } from './mission/mission.module';
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
+    MdTableModule,
     AppRoutingModule,
     TeamModule,
     MatchModule,

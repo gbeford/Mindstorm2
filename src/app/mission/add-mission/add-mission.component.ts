@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Type } from 'app/match/model/type';
 import { ArrayType } from '@angular/compiler/src/output/output_ast';
-//import { AddMissionSubComponent } from './add-mission-sub.component';
+
 
 @Component({
   selector: 'app-add-mission',
@@ -13,22 +13,12 @@ export class AddMissionComponent implements OnInit {
 
   missionEditForm: FormGroup;
 
-  //dropdown
-  // selectedType: Type;
-  // types = [
-  //   new Type(-1, 'Please select'),
-  //   new Type(1, 'String'),
-  //   new Type(2, 'Range'),
-  //   new Type(3, 'Bool'),
-  // ];
-
   constructor(private formBuilder: FormBuilder, ) { }
 
   ngOnInit() {
 
     this.buildForm();
   }
-
 
 
   buildForm() {
@@ -49,6 +39,7 @@ export class AddMissionComponent implements OnInit {
       optionList: [''],
       minRange: ['', [Validators.maxLength(1)]],
       maxRange: ['', [Validators.maxLength(1)]],
+      points: [''],
     });
   }
 

@@ -7,7 +7,7 @@ dark-teal { background-color:#0096a7; }
 teelish { background-color:#01adc3; }
 coral { background-color:#f68170; }
 
-.panel-heading {
+.panel-default .panel-heading {
     font-weight: 700;
     font-size: 15px;
     background-color:#cdcdcd;

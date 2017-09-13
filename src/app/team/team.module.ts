@@ -6,7 +6,7 @@ import { MaterialModule } from '@angular/material';
 import { TeamListingComponent } from './team-listing/team-listing.component';
 import { TeamEditComponent } from './team-edit/team-edit.component';
 import { TeamService } from './team.service';
-import { TeamResolver } from "app/team/team-resolver.service";
+import { TeamResolver } from 'app/team/team-resolver.service';
 
 @NgModule({
   imports: [

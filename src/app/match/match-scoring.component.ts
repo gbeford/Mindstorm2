@@ -47,7 +47,9 @@ export class MatchScoringComponent implements OnInit {
   createForm() {
     const group = this.fb.group({
       team: [''],
-      tableNumber: ['']
+      tableNumber: [''],
+      matchNumber: [''],
+      signature: ['']
     });
 
     this.missions.forEach(control =>

@@ -7,12 +7,12 @@ import { Type } from 'app/match/model/type';
   templateUrl: './add-mission-item.component.html'
 })
 
-export class AddMissionItemComponent {
+export class AddMissionItemComponent implements OnInit{
   // will pass in the sub form from the add mission details form
 
-  @Input('group') AddMissionItemForm: FormGroup;
+  @Input() AddMissionItemForm: FormGroup;
 
-  //dropdown
+  // dropdown
   selectedType: Type;
   types = [
     new Type(-1, 'Please select'),

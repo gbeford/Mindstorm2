@@ -1,15 +1,31 @@
 
-  <div class="table-responsive">
-    <table class="table table-condensed table-striped table-hover">
-      <thead>
-        <tr>
-          <th>edit</th>
-          <th>Team Name</th>
-          <th>Team Number</th>
-        </tr>
-      </thead>
-      <tbody >
-        <tr *ngFor="let team of teamList">
+  <!-- <div class="table-responsive"> -->
+    <div>
+      <md-table #table [dataSource]="dataSource" mdSort>
+
+          <ng-container mdColumnDef="edit">
+              <md-header-cell *mdHeaderCellDef> edit </md-header-cell>
+              <md-cell *mdCellDef="let row"> <a [routerLink]="['/teams', row.teamId, 'edit']">
+                <md-icon class="edit">create </md-icon>
+              </a> </md-cell>
+            </ng-container>
+
+            <ng-container mdColumnDef="teamName">
+                <md-header-cell *mdHeaderCellDef md-sort-header> Team Name </md-header-cell>
+                <md-cell *mdCellDef="let team"> {{team.teamName}}</md-cell>
+              </ng-container>
+
+              <ng-container mdColumnDef="teamNumber">
+                  <md-header-cell *mdHeaderCellDef md-sort-header> Team Number </md-header-cell>
+                  <md-cell *mdCellDef="let team">{{team.teamNumber}} </md-cell>
+                </ng-container>
+
+                <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+                <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+              </md-table>
+            </div>
+
+        <!-- <tr *ngFor="let team of teamList">
           <td>
             <a [routerLink]="['/teams', team.teamId, 'edit']">
               <md-icon class="edit">create </md-icon>
@@ -20,4 +36,4 @@
         </tr>
       </tbody>
     </table>
-</div>
+</div>-->

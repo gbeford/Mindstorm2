@@ -2,10 +2,10 @@
     <div class="row">
 
   <!-- {{missions | json}} -->
-  <form class="form-horizontal" *ngIf="matchScoringForm" [formGroup]="matchScoringForm" novalidate>
+  <form class="form-horizontal" *ngIf="matchScoringForm" [formGroup]="matchScoringForm" novalidate (ngSubmit)="save()">
       <div class="panel panel-default">
           <div class='panel-heading'>
-            <h5>{{title}}</h5>
+            <span>{{title}}</span>
           </div>
           <div class="panel-body">
 
@@ -18,7 +18,10 @@
         <label for='table-number'>Table Number</label>
         <input class='form-control' id='table-number' placeholder='Table Number' type='text' formControlName="tableNumber">
       </div>
-
+      <div class='form-group col-md-2'>
+          <label for='match-number'>Match Number</label>
+          <input class='form-control' id='match-number' placeholder='Match Number' type='text' formControlName="matchNumber">
+        </div>
 
       <div *ngFor="let mission of missions">
         <div class="panel-heading col-lg-12">
@@ -69,8 +72,12 @@
         </div>
 
       </div>
+      <div class='form-group col-md-12'>
+          <label for='signature'>Signature</label>
+          <input class='form-control' id='signature' placeholder='Signature' type='text' formControlName="signature">
+        </div>
       <div class='col-md-12'>
-          <button type="submit" [disabled]="!missionEditForm.valid">Save</button>
+          <button type="submit" [disabled]="!matchScoringForm.valid">Save</button>
         </div>
     </div>
   </div>
