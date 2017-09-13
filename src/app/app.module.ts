@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { MdTableModule} from '@angular/material';
+import {SignaturePad} from 'angular2-signaturepad/signature-pad';
 // import { RouterModule } from '@angular/router';
 
 
@@ -29,7 +30,8 @@ import { MissionModule } from './mission/mission.module';
     PageNotFoundComponent,
     MenuComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    SignaturePad,
   ],
   imports: [
     BrowserModule,

@@ -72,9 +72,12 @@
         </div>
 
       </div>
+
+
+
       <div class='form-group col-md-12'>
           <label for='signature'>Signature</label>
-          <input class='form-control' id='signature' placeholder='Signature' type='text' formControlName="signature">
+          <signature-field formControlName="signature"></signature-field>
         </div>
       <div class='col-md-12'>
           <button type="submit" [disabled]="!matchScoringForm.valid">Save</button>

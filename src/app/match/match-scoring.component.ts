@@ -1,25 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatchService } from './match.service';
 import { IMission } from 'app/match/model/mission';
-
+import { SignatureComponent } from './signature/signature.component';
 
 @Component({
   selector: 'app-match-scoring',
   providers: [MatchService],
   templateUrl: './match-scoring.component.html',
-  styleUrls: ['./match-scoring.component.css']
+  styleUrls: ['./match-scoring.component.css'],
 })
 
 
 export class MatchScoringComponent implements OnInit {
+
   title = 'Judge Match';
   missions: IMission[];
   public matchScoringForm: FormGroup;
+  @ViewChildren(SignatureComponent) public sigs: QueryList<SignatureComponent>;
+
 
   constructor(private matchService: MatchService,
     private fb: FormBuilder) { }
-
 
   ngOnInit() {
     // Load comments
@@ -74,6 +76,11 @@ export class MatchScoringComponent implements OnInit {
     //     }
     //   );
     // }
+
+    // console.log('CAPTURED SIGS:');
+    // console.log(this.sigs.first.signature);
+
+
   }
 
   // getRange(missions){
@@ -95,5 +102,7 @@ export class MatchScoringComponent implements OnInit {
 
   //   }
   // }
+
+
 
 }
