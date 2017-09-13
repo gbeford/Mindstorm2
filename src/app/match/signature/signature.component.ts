@@ -27,6 +27,7 @@ export class SignatureComponent implements OnInit, AfterViewInit {
 
   public drawComplete() {
     this.signatureImage = this.signaturePad.toDataURL();
+    console.log(this.signatureImage);
   // this.signature = this.signaturePad.toDataURL('image/jpeg', 0.5);
   }
 

@@ -20,6 +20,8 @@ import { MatchModule } from './match/match.module';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { MissionModule } from './mission/mission.module';
+import { SignatureComponent } from './match/signature/signature.component';
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 
 
@@ -31,6 +33,7 @@ import { MissionModule } from './mission/mission.module';
     MenuComponent,
     HomeComponent,
     AdminComponent,
+    SignatureComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { MissionModule } from './mission/mission.module';
     AppRoutingModule,
     TeamModule,
     MatchModule,
-    MissionModule
+    MissionModule,
+    SignaturePadModule
     // RouterModule
   ],
   providers: [],
