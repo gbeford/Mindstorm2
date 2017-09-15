@@ -48,7 +48,7 @@ export class MatchScoringComponent implements OnInit {
       team: [''],
       tableNumber: [''],
       matchNumber: [''],
-      signature: ['']
+      signatureField: ['']
     });
 
     this.missions.forEach(control =>

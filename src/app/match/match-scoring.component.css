@@ -22,6 +22,17 @@ body {
   background-color: #0096a7;
   border-color: #037E8B;
 }
+
+.mat-button-toggle-checked{
+  background-color: #0096a7;
+  border-color: #037E8B;
+}
+.mat-button-toggle{
+  /*color: white;
+   background-color: #01adc3;*/
+  border-color: #0096a7;
+}
+
 .btn-primary{
   background-color: #01adc3;
   border-color: #0096a7;
@@ -36,10 +47,11 @@ body {
 .sig-container canvas {
   border-style: solid;
   border-width: 1px;
+
 }
 
-.sig-container canvas {
-  background-image: url('/assets/sign-here.png');
+ .sig-container canvas {
+  background-image: url('~/assets/sign-here.png');
   background-repeat: no-repeat;
   background-position-y: 95%;
-}
+} 

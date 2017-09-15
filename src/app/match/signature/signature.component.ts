@@ -13,8 +13,8 @@ export class SignatureComponent implements OnInit, AfterViewInit {
 
     public signaturePadOptions: Object = {
       'minWidth': 2,
-      'canvasWidth': 340,
-      'canvasHeight': 200
+      'canvasWidth': 440,
+      'canvasHeight': 100
     };
 
     public signatureImage: string;

@@ -7,3 +7,9 @@ signature-pad {
     }
   }
 } */
+
+.sig-container canvas {
+  background-image: url('/assets/sign-here.png');
+  background-repeat: no-repeat;
+  background-position-y: 95%;
+}
