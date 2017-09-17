@@ -44,14 +44,14 @@ body {
   border-width: 1px;
 }
 
-.sig-container canvas {
+app-signature-field  {
   border-style: solid;
   border-width: 1px;
 
 }
 
  .sig-container canvas {
-  background-image: url('~/assets/sign-here.png');
+  background-image: url('/assets/images/sign-here.png');
   background-repeat: no-repeat;
   background-position-y: 95%;
-} 
+}

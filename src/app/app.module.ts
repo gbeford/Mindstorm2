@@ -22,6 +22,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MissionModule } from './mission/mission.module';
 import { SignatureComponent } from './match/signature/signature.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
+import { SignatureFieldComponent } from './signature-field/signature-field.component';
 
 
 
@@ -33,7 +34,8 @@ import { SignaturePadModule } from 'angular2-signaturepad';
     MenuComponent,
     HomeComponent,
     AdminComponent,
-    SignatureComponent
+    SignatureComponent,
+    SignatureFieldComponent
   ],
   imports: [
     BrowserModule,

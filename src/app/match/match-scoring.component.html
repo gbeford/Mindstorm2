@@ -43,36 +43,46 @@
                         </label>
                     </ng-container>
                   </div>-->
-                      <md-button-toggle-group  #group="mdButtonToggleGroup" >
-                          <md-button-toggle name={{item.missionItemId}} *ngFor="let list of item.optionListArray" value={{list}}>
-                            {{list}}
-                            </md-button-toggle>
+                      <md-button-toggle-group #group="mdButtonToggleGroup" name={{item.missionItemId}}>
+                        <md-button-toggle *ngFor="let list of item.optionListArray" value={{list}}>
+                          {{list}}
+                        </md-button-toggle>
                       </md-button-toggle-group>
-                        <div class="example-selected-value">Selected value: {{group.value}}</div>
+                      <div class="example-selected-value">Selected value: {{group.value}}</div>
                     </div>
 
 
 
                     <div *ngSwitchCase="'bool'">
-                      <div class="btn-group" data-toggle="buttons">
+                      <!-- <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
                               <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off"> Yes
                           </label>
                         <label class="btn btn-primary">
                           <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off">No
                               </label>
-                      </div>
+                      </div> -->
+                      <md-button-toggle-group #group="mdButtonToggleGroup" name={{item.missionItemId}}>
+                        <md-button-toggle  value="Yes">  Yes </md-button-toggle>
+                          <md-button-toggle  value="No"> No </md-button-toggle>
+                      </md-button-toggle-group>
                     </div>
 
                     <div *ngSwitchCase="'range'">
-                      <div class="btn-group" data-toggle="buttons">
+                        <md-button-toggle-group #group="mdButtonToggleGroup" name={{item.missionItemId}}>
+                            <md-button-toggle *ngFor="let ranges of item.rangeListArray" value= {{ranges}}>
+                                {{ranges}}
+                              </md-button-toggle>
+                            </md-button-toggle-group>
+                      <!-- <div class="btn-group" data-toggle="buttons">
                         <ng-container *ngFor="let ranges of item.rangeListArray">
                           <label class="btn btn-primary active">
                               <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off"> {{ranges}}
                           </label>
                         </ng-container>
-                      </div>
+                      </div> -->
                     </div>
+
                     <div *ngSwitchDefault>Nothing Found.</div>
 
                   </div>
@@ -86,7 +96,10 @@
 
 
           <div class='form-group col-md-12'>
-            <label for='signature'>Signature</label>
+            <div class="sig-container" #sigContainer1>
+                <label for='signature'>Signature</label>
+                <app-signature-field formControlName="signatureField"></app-signature-field>
+              </div>
           </div>
           <div class='col-md-12'>
             <button type="submit" [disabled]="!matchScoringForm.valid">Save</button>
@@ -95,10 +108,7 @@
       </div>
       <!-- /.row this actually does not appear to be needed with the form-horizontal -->
     </form>
-    <div class="sig-container" #sigContainer1>
-      <label for='signature'>Signature</label>
-      <app-signature formControlName="signature"></app-signature>
-    </div>
+
   </div>
   <!--row div-->
 </div>
