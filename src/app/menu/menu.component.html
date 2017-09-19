@@ -1,8 +1,8 @@
 <md-toolbar color="menu-teal">
 
   <button md-icon-button [mdMenuTriggerFor]="appMenu">
-   <md-icon>menu</md-icon>
-</button>
+    <md-icon>menu</md-icon>
+  </button>
 
   <md-menu #appMenu="mdMenu">
 
@@ -13,11 +13,11 @@
 
     <a [routerLink]="['/addMission']" md-menu-item>
       <md-icon>create </md-icon>
-     <span>Add Mission</span>
+      <span>Add Mission</span>
     </a>
 
     <a [routerLink]="['/matchHard']" md-menu-item>
-     <span>match hardcoded</span>
+      <span>match hardcoded</span>
     </a>
     <a [routerLink]="['/match']" md-menu-item>
       <md-icon>create </md-icon>
@@ -32,13 +32,14 @@
 
     <a [routerLink]="['/teams', 0, 'edit']" md-menu-item>
       <md-icon>create </md-icon>
-     <span>Add Team</span>
+      <span>Add Team</span>
     </a>
 
-    <button md-menu-item>
-    <md-icon> mail </md-icon>
-    <!--<span> Send </span>-->
-  </button>
+    <!-- <button md-menu-item>      -->
+    <a href="mailto:john@shrewsburyrobotics.org?Subject=Mindstorm" md-menu-item>
+      <md-icon> mail </md-icon>
+    </a>
+    <!-- </button> -->
   </md-menu>
 
   <span class="spacer"> </span>
