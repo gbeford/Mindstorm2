@@ -1,0 +1,445 @@
+<div class="container">
+  <h1>Enter Robot Technical Scores for 156 Orange GearTicks</h1>
+  <form class="new_robot_score" id="new_robot_score" action="/teams/1473/robot_scores" accept-charset="UTF-8" method="post">
+    <input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="authenticity_token" value="U826J7CEMdhvecAFzqqd7v4vlLYAQEuuM9v5NBKRtHicZsroogPn0OV8Cj0y0edjjNCI9tkPy2oJVwiXZ16XMg=="
+    />
+
+    <p>Judge:
+      <input type="text" name="robot_score[judge_name]" id="robot_score_judge_name" />
+    </p>
+
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="8">
+          <div class="vertical">
+            <span>Mechanical&nbsp;Design</span>
+          </div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Durbility</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Evidence of structural integrity; ability to withstand rigors of competition</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[m_durability]" id="robot_score_m_durability_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[m_durability]" id="robot_score_m_durability_1" />
+          <label for="robot_score_m_durability_1">quite fragile, breaks a lot</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[m_durability]" id="robot_score_m_durability_2" />
+          <label for="robot_score_m_durability_2">frequent or significant faults/repairs</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[m_durability]" id="robot_score_m_durability_3" />
+          <label for="robot_score_m_durability_3">rare faults/repairs</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[m_durability]" id="robot_score_m_durability_4" />
+          <label for="robot_score_m_durability_4">sound construction; no repairs</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Mechanical Efficiency</b>
+        </td>
+        <td colspan="4">
+          <i>Economic use of parts and time; easy to repair and modify</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[m_efficiency]" id="robot_score_m_efficiency_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[m_efficiency]" id="robot_score_m_efficiency_1" />
+          <label for="robot_score_m_efficiency_1">excessive parts or time to repair/modify</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[m_efficiency]" id="robot_score_m_efficiency_2" />
+          <label for="robot_score_m_efficiency_2">inefficient parts or time to repair/modify</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[m_efficiency]" id="robot_score_m_efficiency_3" />
+          <label for="robot_score_m_efficiency_3">appropriate use of parts and time to repair/modify</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[m_efficiency]" id="robot_score_m_efficiency_4" />
+          <label for="robot_score_m_efficiency_4">streamlined use of parts and time to repair/modify</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Mechanization</b>
+        </td>
+        <td colspan="4">
+          <i>Ability of robot mechanisms to move or act with appropriate speed, strength and accuracy for inteneded tasks (propulsion
+            and execution)</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[m_mechanization]" id="robot_score_m_mechanization_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[m_mechanization]" id="robot_score_m_mechanization_1" />
+          <label for="robot_score_m_mechanization_1">imbalance of speed, strength and accuracy on most tasks</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[m_mechanization]" id="robot_score_m_mechanization_2" />
+          <label for="robot_score_m_mechanization_2">imbalance of speed, strength and accuracy on some tasks</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[m_mechanization]" id="robot_score_m_mechanization_3" />
+          <label for="robot_score_m_mechanization_3">appropriate balance of speed, strength and accuracy on most tasks</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[m_mechanization]" id="robot_score_m_mechanization_4" />
+          <label for="robot_score_m_mechanization_4">appropriate balance of speed, strength and accuracy on every task</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="robot_score[award_mechdesign]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="robot_score[award_mechdesign]" id="robot_score_award_mechdesign" />
+          <strong>Mechanical Design Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td colspan="5" valign="top">
+          Comments:
+          <textarea rows="5" cols="100" name="robot_score[m_comments]" id="robot_score_m_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="8">
+          <div class="vertical">Programming</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Programming Quality</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Programs are appropriate for the intended purpose and would achieve consistent results, assuming no mechanical
+            faults
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[p_quality]" id="robot_score_p_quality_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[p_quality]" id="robot_score_p_quality_1" />
+          <label for="robot_score_p_quality_1">would not achieve purpose AND is inconsistent</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[p_quality]" id="robot_score_p_quality_2" />
+          <label for="robot_score_p_quality_2">would not achieve purpose OR is inconsistent</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[p_quality]" id="robot_score_p_quality_3" />
+          <label for="robot_score_p_quality_3">should achieve purpose repeatedly</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[p_quality]" id="robot_score_p_quality_4" />
+          <label for="robot_score_p_quality_4">should achieve purpose every time</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Programming Efficiency</b>
+        </td>
+        <td colspan="3">
+          <i>Programs are modular, streamlined, and understandable</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[p_efficiency]" id="robot_score_p_efficiency_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[p_efficiency]" id="robot_score_p_efficiency_1" />
+          <label for="robot_score_p_efficiency_1">excessive code and difficult to understand</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[p_efficiency]" id="robot_score_p_efficiency_2" />
+          <label for="robot_score_p_efficiency_2">inefficient code and challenge to understand</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[p_efficiency]" id="robot_score_p_efficiency_3" />
+          <label for="robot_score_p_efficiency_3">appropriate code and easy to understand</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[p_efficiency]" id="robot_score_p_efficiency_4" />
+          <label for="robot_score_p_efficiency_4">streamlined code and easy for anyone to understand</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Automation/Navigation</b>
+        </td>
+        <td colspan="3">
+          <i>Ability of the robot to move or act as intended using mechanical and/or sensor feedback (with minimal reliance
+            on driver intervention and/or program timing)</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[p_automation]" id="robot_score_p_automation_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[p_automation]" id="robot_score_p_automation_1" />
+          <label for="robot_score_p_automation_1">frequent driver intervention to aim AND retrieve robot</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[p_automation]" id="robot_score_p_automation_2" />
+          <label for="robot_score_p_automation_2">frequent driver intervention to aim OR retrieve robot</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[p_automation]" id="robot_score_p_automation_3" />
+          <label for="robot_score_p_automation_3">robot moves/acts as intended repeatedly w/occasional driver intervention</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[p_automation]" id="robot_score_p_automation_4" />
+          <label for="robot_score_p_automation_4">robot moves/acts as intended every time with no driver intervention</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="robot_score[award_programming]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="robot_score[award_programming]" id="robot_score_award_programming" />
+          <strong> Programming Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td colspan="5">
+          Comments:
+          <textarea rows="5" cols="100" name="robot_score[p_comments]" id="robot_score_p_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="8">
+          <div class="vertical">Strategy&nbsp;&amp;&nbsp;Innovation</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Design Process</b>
+        </td>
+        <td class="alt" colspan="4">
+          <i>Ablity to develop and explain improvement cycles where alternatives are considered and narrowed, designs improved
+            (applies to programming as well as mechanical design)</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[i_designprocess]" id="robot_score_i_designprocess_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[i_designprocess]" id="robot_score_i_designprocess_1" />
+          <label for="robot_score_i_designprocess_1">organization AND explanation need improvement</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[i_designprocess]" id="robot_score_i_designprocess_2" />
+          <label for="robot_score_i_designprocess_2">organization or explanation need improvement</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[i_designprocess]" id="robot_score_i_designprocess_3" />
+          <label for="robot_score_i_designprocess_3">systematic and well-explained</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[i_designprocess]" id="robot_score_i_designprocess_4" />
+          <label for="robot_score_i_designprocess_4">systematic, well-explained and well-documented</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Missions Strategy</b>
+        </td>
+        <td colspan="3">
+          <i>Ability to clearly define and describe the team's game strategy</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[i_strategy]" id="robot_score_i_strategy_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[i_strategy]" id="robot_score_i_strategy_1" />
+          <label for="robot_score_i_strategy_1">no clear goals AND no clear strategy</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[i_strategy]" id="robot_score_i_strategy_2" />
+          <label for="robot_score_i_strategy_2">no clear goals OR no clear strategy</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[i_strategy]" id="robot_score_i_strategy_3" />
+          <label for="robot_score_i_strategy_3">clear strategy to accomplish the team&#39;s well defined goals</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[i_strategy]" id="robot_score_i_strategy_4" />
+          <label for="robot_score_i_strategy_4">clear strategy to accomplish most/all game missions</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Innovation</b>
+        </td>
+        <td colspan="3">
+          <i>Creation of new, unique, or unexpected feature(s)(e.g designs, programming, strategies or applications) that are
+            beneficial in performing the specified task</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="robot_score[i_innovation]" id="robot_score_i_innovation_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="robot_score[i_innovation]" id="robot_score_i_innovation_1" />
+          <label for="robot_score_i_innovation_1">original feature(s) with no added value or potential</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="robot_score[i_innovation]" id="robot_score_i_innovation_2" />
+          <label for="robot_score_i_innovation_2">original feature(s) with some added value or potential</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="robot_score[i_innovation]" id="robot_score_i_innovation_3" />
+          <label for="robot_score_i_innovation_3">original feature(s) with the potential to add significant</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="robot_score[i_innovation]" id="robot_score_i_innovation_4" />
+          <label for="robot_score_i_innovation_4">original feature(s) that add significant value</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="robot_score[award_strategy]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="robot_score[award_strategy]" id="robot_score_award_strategy" />
+          <strong> Strategy &amp; Innovation Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td colspan="5">
+          Comments:
+          <textarea rows="5" cols="100" name="robot_score[i_comments]" id="robot_score_i_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <input type="submit" name="commit" value="Submit" />
+    </p>
+  </form>
+</div>

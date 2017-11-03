@@ -1,4 +1,4 @@
-import { IMissionItem } from "app/match/model/missionItem";
+import { IMissionItem } from './missionItem';
 
 /* Defines the team entity */
 export interface IMission {

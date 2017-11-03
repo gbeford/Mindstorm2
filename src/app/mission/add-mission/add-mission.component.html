@@ -1,7 +1,7 @@
 <div class='container'>
   <div class="row">
 
-    <form [formGroup]="missionEditForm" novalidate (ngSubmit)=" onSubmit()">
+    <form [formGroup]="missionEditForm" novalidate (ngSubmit)=" save()">
       <div class="panel panel-default">
         <div class='panel-heading'>
           <span>Enter A New Mission</span>
@@ -10,7 +10,7 @@
           <div style="padding:2% 4%">
             <div class='form-group col-md-4'>
               <label for='mission-desc'>Mission Description</label>
-              <input class='form-control' id='mission-desc' placeholder='Mission Description' type='text' formControlName="missionDesc"
+              <input class='form-control' id='mission-desc' placeholder='Mission Description' type='text' formControlName="missionDescription"
                 required>
               <!-- <small [hidden]="teamEditForm.controls['teamNumber'].valid || teamEditForm.controls['teamNumber'].pristine && !submitted" class="alert alert-danger">
         Team number is required !
@@ -19,12 +19,12 @@
 
             <div class='form-group col-md-2'>
               <label for='mission-order'>Mission Order</label>
-              <input class='form-control' id='mission-order' placeholder='Mission Order' type='text' formControlName="missionOrder">
+              <input class='form-control' id='mission-order' placeholder='Mission Order' type='text' formControlName="sortOrder">
             </div>
 
             <div class='form-group col-md-2'>
               <label for='game-year'>Game Year</label>
-              <input class='form-control' id='game-year' placeholder='Game Year' type='text' formControlName="gameYear">
+              <input class='form-control' id='game-year' placeholder='Game Year' type='text' formControlName="matchYear">
             </div>
           </div>
 
@@ -34,22 +34,22 @@
                 <span>Mission Item</span>
               </div>
               <div style="padding:10px;">
-              <span class="glyphicon glyphicon-remove pull-right" *ngIf="missionEditForm.controls.missionItems.controls.length > 1" (click)="delInput(i)"></span>
-            </div>
-             <app-add-mission-item [AddMissionItemForm]="missionEditForm.controls.missionItems.controls[i]" class="panel-body"></app-add-mission-item>
+                <span class="glyphicon glyphicon-remove pull-right" *ngIf="missionEditForm.controls.missionItems.controls.length > 1" (click)="delInput(i)"></span>
+              </div>
+              <app-add-mission-item [AddMissionItemForm]="missionEditForm.controls.missionItems.controls[i]" class="panel-body"></app-add-mission-item>
               <!-- <button type="button" (click)="delInput(i)">Delete</button> -->
             </div>
           </div>
 
           <div class='col-md-9'>
             <a (click)="addInput()" style="cursor: default; padding:50px">
-                Add another question
-              </a>
+              Add another question
+            </a>
           </div>
           <div class='col-md-2'>
-          <button type="submit" [disabled]="!missionEditForm.valid">Save</button>
+            <button type="submit" [disabled]="!missionEditForm.valid">Save</button>
+          </div>
         </div>
-      </div>
       </div>
     </form>
 

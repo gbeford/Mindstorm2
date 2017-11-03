@@ -1,7 +1,10 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Type } from 'app/match/model/type';
 import { ArrayType } from '@angular/compiler/src/output/output_ast';
+import { MissionService } from 'app/mission/mission.service';
+import { IMission } from 'app/mission/model/mission';
 
 
 @Component({
@@ -12,8 +15,14 @@ import { ArrayType } from '@angular/compiler/src/output/output_ast';
 export class AddMissionComponent implements OnInit {
 
   missionEditForm: FormGroup;
+  mission: IMission;
+  public submitted: boolean;
+  public err: any;
+  public resp: IMission;
 
-  constructor(private formBuilder: FormBuilder, ) { }
+  constructor(private formBuilder: FormBuilder,
+    private missionService: MissionService,
+    private router: Router) { }
 
   ngOnInit() {
 
@@ -23,9 +32,9 @@ export class AddMissionComponent implements OnInit {
 
   buildForm() {
     this.missionEditForm = this.formBuilder.group({
-      missionDesc: ['', [Validators.required]],
-      missionOrder: [''],
-      gameYear: [''],
+      missionDescription: ['', [Validators.required]],
+      sortOrder: [''],
+      matchYear: [''],
       missionItems: this.formBuilder.array([this.initSubForm()])
     });
   }
@@ -33,8 +42,8 @@ export class AddMissionComponent implements OnInit {
   initSubForm() {
     // initialize Sub form
     return this.formBuilder.group({
-      questionDesc: ['', [Validators.required]],
-      questionOrder: ['', [Validators.maxLength(1)]],
+      questionDescription: ['', [Validators.required]],
+      sortOrder: ['', [Validators.maxLength(1)]],
       type: [''],
       optionList: [''],
       minRange: ['', [Validators.maxLength(1)]],
@@ -53,12 +62,26 @@ export class AddMissionComponent implements OnInit {
     arrayControl.removeAt(index);
   }
 
-  onSubmit(): void {
-    console.log(this.missionEditForm.value);
-    // Your form value is outputted as a JavaScript object.
-    // Parse it as JSON or take the values necessary to use as you like
 
+  save() {
+    console.log(this.missionEditForm.value);
+    this.submitted = true;
+    if (this.missionEditForm.dirty && this.missionEditForm.valid) {
+      // copy the form values over the team object values
+      const t = Object.assign({}, this.mission, this.missionEditForm.value);
+      this.missionService.saveMission(t).subscribe(
+        resp => {
+          this.resp = resp
+          this.missionEditForm.reset();
+        },
+        err => {
+          this.err = <any>err
+          console.log(err);
+        }
+      );
+    }
   }
+
 
 
 }

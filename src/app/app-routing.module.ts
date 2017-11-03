@@ -9,17 +9,17 @@ import { AddMissionComponent } from './mission/add-mission/add-mission.component
 
 @NgModule({
   imports: [
-      RouterModule.forRoot([
+    RouterModule.forRoot([
       { path: '', component: HomeComponent },
 
       {
         path: 'teams',
         loadChildren: 'app/team/team.module#TeamModule'
-    },
+      },
       { path: 'match', component: MatchScoringComponent },
       { path: 'addMission', component: AddMissionComponent },
       // { path: 'teamList', component: TeamListingComponent },
-      //{ path: 'matchHard', component: MatchScoringComponent },
+      // { path: 'matchHard', component: MatchScoringComponent },
       { path: '**', component: PageNotFoundComponent }
     ]),
   ],
