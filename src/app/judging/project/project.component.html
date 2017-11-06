@@ -1,0 +1,470 @@
+<div class="container">
+  <h1>Enter Project Scores for 156 Orange GearTicks</h1>
+  <form class="new_project_score" id="new_project_score" action="/teams/1473/project_scores" accept-charset="UTF-8" method="post">
+    <input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="authenticity_token" value="LjpknNKh6+azVbp6gqttNkEGE8qNBwFQlYAMdZaiCdPhkRRTwCY97jlQcEJ+0Be7M/kPilRIgZSvDP3W420qmQ=="
+    />
+
+    <p>Judge:
+      <input type="text" name="project_score[judge_name]" id="project_score_judge_name" />
+    </p>
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="10">
+          <div class="vertical">Research</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Problem Identification</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Clear definition of the problem being studied</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[r_problemID]" id="project_score_r_problemID_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[r_problemID]" id="project_score_r_problemID_1" />
+          <label for="project_score_r_problemID_1">unclear; few details</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[r_problemID]" id="project_score_r_problemID_2" />
+          <label for="project_score_r_problemID_2">partially clear; details missing</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[r_problemID]" id="project_score_r_problemID_3" />
+          <label for="project_score_r_problemID_3">mostly clear; detailed</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[r_problemID]" id="project_score_r_problemID_4" />
+          <label for="project_score_r_problemID_4">clear; very detailed</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Sources of Information</b>
+        </td>
+        <td colspan="3">
+          <i>Types (e.g. books, magazines, websites, reports and other resources) and number of quality sources cited, including
+            professionals in the field</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[r_source]" id="project_score_r_source_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[r_source]" id="project_score_r_source_1" />
+          <label for="project_score_r_source_1">one type of information cited; minimal sources</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[r_source]" id="project_score_r_source_2" />
+          <label for="project_score_r_source_2">two types of information cited; several sources</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[r_source]" id="project_score_r_source_3" />
+          <label for="project_score_r_source_3">three types of information cited; many sources, including professionals</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[r_source]" id="project_score_r_source_4" />
+          <label for="project_score_r_source_4">four(+) types of information cited; extensive sources, incl. professionals</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Problem Analysis</b>
+        </td>
+        <td colspan="3">
+          <i>Depth to which the problem was studied and analyzed by the team</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[r_analysis]" id="project_score_r_analysis_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[r_analysis]" id="project_score_r_analysis_1" />
+          <label for="project_score_r_analysis_1">minimal study; no team analysis</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[r_analysis]" id="project_score_r_analysis_2" />
+          <label for="project_score_r_analysis_2">minimal study; some team analysis </label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[r_analysis]" id="project_score_r_analysis_3" />
+          <label for="project_score_r_analysis_3">sufficient study and analysis by team</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[r_analysis]" id="project_score_r_analysis_4" />
+          <label for="project_score_r_analysis_4">extensive study and analysis by team</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Review Existing Solutions</b>
+        </td>
+        <td colspan="3">
+          <i>Extent to which existing theories and solutions were analyzed by the team, Including an effort to verify the originality
+            of the team's solution</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[r_review]" id="project_score_r_review_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[r_review]" id="project_score_r_review_1" />
+          <label for="project_score_r_review_1">minimal review; no team analysis</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[r_review]" id="project_score_r_review_2" />
+          <label for="project_score_r_review_2">minimal review; some team analysis </label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[r_review]" id="project_score_r_review_3" />
+          <label for="project_score_r_review_3">sufficient review and analysis by team</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[r_review]" id="project_score_r_review_4" />
+          <label for="project_score_r_review_4">extensive review and analysis by team</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="project_score[award_research]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="project_score[award_research]" id="project_score_award_research" />
+          <strong>Research Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td colspan="5" valign="top">
+          Comments:
+          <textarea rows="5" cols="100" name="project_score[r_comments]" id="project_score_r_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="8">
+          <div class="vertical">Innovative&nbsp;Solution</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Team Solution</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Clear explanation of the proposed solution</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[i_teamsolution]" id="project_score_i_teamsolution_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[i_teamsolution]" id="project_score_i_teamsolution_1" />
+          <label for="project_score_i_teamsolution_1">difficult to understand</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[i_teamsolution]" id="project_score_i_teamsolution_2" />
+          <label for="project_score_i_teamsolution_2">some parts confusing</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[i_teamsolution]" id="project_score_i_teamsolution_3" />
+          <label for="project_score_i_teamsolution_3">understandable</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[i_teamsolution]" id="project_score_i_teamsolution_4" />
+          <label for="project_score_i_teamsolution_4">easy to understand by all</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Innovation</b>
+        </td>
+        <td colspan="3">
+          <i>Degree to which the team's solution makes life better by improving existing options, developing a new application
+            of existing ideas or solving the problem in a completely new way</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[i_innovation]" id="project_score_i_innovation_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[i_innovation]" id="project_score_i_innovation_1" />
+          <label for="project_score_i_innovation_1">existing solutions/application</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[i_innovation]" id="project_score_i_innovation_2" />
+          <label for="project_score_i_innovation_2">solutions/application contains some original elements(s)</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[i_innovation]" id="project_score_i_innovation_3" />
+          <label for="project_score_i_innovation_3">original solution/application</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[i_innovation]" id="project_score_i_innovation_4" />
+          <label for="project_score_i_innovation_4">original solution/application with the potential to add significant value</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Implementation</b>
+        </td>
+        <td colspan="3">
+          <i>consideration of factors for implementation (cost, ease of manufacturing, ect.)</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[i_implementation]" id="project_score_i_implementation_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[i_implementation]" id="project_score_i_implementation_1" />
+          <label for="project_score_i_implementation_1">minimal factors considered</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[i_implementation]" id="project_score_i_implementation_2" />
+          <label for="project_score_i_implementation_2">some factors considered</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[i_implementation]" id="project_score_i_implementation_3" />
+          <label for="project_score_i_implementation_3">factors well considered; some question about proposed solutions</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[i_implementation]" id="project_score_i_implementation_4" />
+          <label for="project_score_i_implementation_4">factors well considered and feasible solution proposed</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="project_score[award_innosolution]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="project_score[award_innosolution]" id="project_score_award_innosolution" />
+          <strong>Innovative Solution Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td colspan="5">
+          Comments:
+          <textarea rows="5" cols="100" name="project_score[i_comments]" id="project_score_i_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="8">
+          <div class="vertical">
+            Presentation</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Presentation Effectiveness</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Message delivery and organization of the presentation</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[p_preseffective]" id="project_score_p_preseffective_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[p_preseffective]" id="project_score_p_preseffective_1" />
+          <label for="project_score_p_preseffective_1">unclear OR disorganized</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[p_preseffective]" id="project_score_p_preseffective_2" />
+          <label for="project_score_p_preseffective_2">partially clear; minimal organization</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[p_preseffective]" id="project_score_p_preseffective_3" />
+          <label for="project_score_p_preseffective_3">mostly clear; mostly organized</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[p_preseffective]" id="project_score_p_preseffective_4" />
+          <label for="project_score_p_preseffective_4">clear AND well organized</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Creativity</b>
+        </td>
+        <td colspan="3">
+          <i>Imagination used to develop and deliver the presentation</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[p_creativity]" id="project_score_p_creativity_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[p_creativity]" id="project_score_p_creativity_1" />
+          <label for="project_score_p_creativity_1"> minimally engaging OR unimaginative</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[p_creativity]" id="project_score_p_creativity_2" />
+          <label for="project_score_p_creativity_2">engaging OR imaginative</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[p_creativity]" id="project_score_p_creativity_3" />
+          <label for="project_score_p_creativity_3">engaging AND imaginative</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[p_creativity]" id="project_score_p_creativity_4" />
+          <label for="project_score_p_creativity_4">very engaging AND exceptionally imaginative</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Sharing</b>
+        </td>
+        <td colspan="3">
+          <i>Degree to which the team shared their Project before the tournament with others who might benefit from the team's
+            efforts (Required for award consideration)</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="project_score[p_sharing]" id="project_score_p_sharing_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="project_score[p_sharing]" id="project_score_p_sharing_1" />
+          <label for="project_score_p_sharing_1">shared with one individual</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="project_score[p_sharing]" id="project_score_p_sharing_2" />
+          <label for="project_score_p_sharing_2">shared with one group</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="project_score[p_sharing]" id="project_score_p_sharing_3" />
+          <label for="project_score_p_sharing_3">shared with one individual or group who may benefit</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="project_score[p_sharing]" id="project_score_p_sharing_4" />
+          <label for="project_score_p_sharing_4">shared with multiple individuals or groups who may benefit</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="project_score[award_presentation]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="project_score[award_presentation]" id="project_score_award_presentation" />
+          <strong>Presentation Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td colspan="5">
+          Comments:
+          <textarea rows="5" cols="100" name="project_score[p_comments]" id="project_score_p_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <input type="submit" name="commit" value="Submit" />
+    </p>
+  </form>
+</div>

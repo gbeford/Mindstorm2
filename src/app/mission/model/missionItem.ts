@@ -1,4 +1,3 @@
-import { IMission } from "app/match/model/mission";
 
 /* Defines the team entity */
 export interface IMissionItem {
@@ -7,6 +6,7 @@ export interface IMissionItem {
     type: string; // bool / range/ string list
     minRange?: number;
     maxRange?: number;
+    points: number;
     optionList?: (null | string)[];
     sortOrder: number; // puts question on the page in order
     missionId: number;

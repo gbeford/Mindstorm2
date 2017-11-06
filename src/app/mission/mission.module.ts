@@ -1,3 +1,4 @@
+import { MissionService } from './mission.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddMissionComponent } from 'app/mission/add-mission/add-mission.component';
@@ -11,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         CommonModule],
     exports: [],
     declarations: [AddMissionComponent, AddMissionItemComponent],
-    providers: [],
+    providers: [MissionService],
 })
 export class MissionModule { }
 

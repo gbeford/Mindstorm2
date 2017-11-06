@@ -23,6 +23,9 @@ import { MissionModule } from './mission/mission.module';
 import { SignatureComponent } from './match/signature/signature.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { SignatureFieldComponent } from './signature-field/signature-field.component';
+import { RobotComponent } from './judging/robot/robot.component';
+import { CoreValuesComponent } from './judging/core-values/core-values.component';
+import { ProjectComponent } from './judging/project/project.component';
 
 
 
@@ -35,7 +38,10 @@ import { SignatureFieldComponent } from './signature-field/signature-field.compo
     HomeComponent,
     AdminComponent,
     SignatureComponent,
-    SignatureFieldComponent
+    SignatureFieldComponent,
+    RobotComponent,
+    CoreValuesComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

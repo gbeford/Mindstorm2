@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  teamsApiUrl: 'http://localhost:51143/api/teams',
-  missionApiUrl: 'http://localhost:51143/api/mission'
+  teamsApiUrl: 'http://localhost:51142/api/teams',
+  missionApiUrl: 'http://localhost:51142/api/mission'
 };

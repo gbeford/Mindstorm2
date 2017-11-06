@@ -36,7 +36,7 @@ export class TeamEditComponent implements OnInit {
   save() {
     this.submitted = true;
     if (this.teamEditForm.dirty && this.teamEditForm.valid) {
-      //copy the form values over the team object values
+      // copy the form values over the team object values
       let t = Object.assign({}, this.team, this.teamEditForm.value);
       this.teamService.saveTeam(t).subscribe(
         resp => {

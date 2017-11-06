@@ -33,7 +33,7 @@
                 <label for="cat1" class="col-md-4 control-label">{{item.questionDescription}}</label>
                 <div class="col-md-5">
                   <div [ngSwitch]="item.type">
-                    <div *ngSwitchCase="'string'">
+                    <div *ngSwitchCase="'String'">
 
 
                       <!-- <div class="btn-group" data-toggle="buttons">
@@ -43,6 +43,7 @@
                         </label>
                     </ng-container>
                   </div>-->
+
                       <md-button-toggle-group #group="mdButtonToggleGroup" name={{item.missionItemId}}>
                         <md-button-toggle *ngFor="let list of item.optionListArray" value={{list}}>
                           {{list}}
@@ -53,7 +54,7 @@
 
 
 
-                    <div *ngSwitchCase="'bool'">
+                    <div *ngSwitchCase="'Bool'">
                       <!-- <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
                               <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off"> Yes
@@ -62,18 +63,20 @@
                           <input type="radio" name="{{item.missionItemId}}" id="{{item.missionItemId}}" autocomplete="off">No
                               </label>
                       </div> -->
+
                       <md-button-toggle-group #group="mdButtonToggleGroup" name={{item.missionItemId}}>
-                        <md-button-toggle  value="Yes">  Yes </md-button-toggle>
-                          <md-button-toggle  value="No"> No </md-button-toggle>
+                        <md-button-toggle value="Yes"> Yes </md-button-toggle>
+                        <md-button-toggle value="No"> No </md-button-toggle>
                       </md-button-toggle-group>
                     </div>
 
-                    <div *ngSwitchCase="'range'">
-                        <md-button-toggle-group #group="mdButtonToggleGroup" name={{item.missionItemId}}>
-                            <md-button-toggle *ngFor="let ranges of item.rangeListArray" value= {{ranges}}>
-                                {{ranges}}
-                              </md-button-toggle>
-                            </md-button-toggle-group>
+                    <div *ngSwitchCase="'Range'">
+                      {{item.rangeListArray | json}}
+                      <md-button-toggle-group #group="mdButtonToggleGroup" name={{item.missionItemId}}>
+                        <md-button-toggle *ngFor="let ranges of item.rangeListArray" value={ {ranges}}>
+                          {{ranges}}
+                        </md-button-toggle>
+                      </md-button-toggle-group>
                       <!-- <div class="btn-group" data-toggle="buttons">
                         <ng-container *ngFor="let ranges of item.rangeListArray">
                           <label class="btn btn-primary active">
@@ -97,9 +100,9 @@
 
           <div class='form-group col-md-12'>
             <div class="sig-container" #sigContainer1>
-                <label for='signature'>Signature</label>
-                <app-signature-field formControlName="signatureField"></app-signature-field>
-              </div>
+              <label for='signature'>Signature</label>
+              <app-signature-field formControlName="signatureField"></app-signature-field>
+            </div>
           </div>
           <div class='col-md-12'>
             <button type="submit" [disabled]="!matchScoringForm.valid">Save</button>

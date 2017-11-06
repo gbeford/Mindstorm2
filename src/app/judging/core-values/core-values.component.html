@@ -1,0 +1,443 @@
+<div class="container">
+  <h1>Enter Core Value Scores for 156 Orange GearTicks</h1>
+  <form class="new_corevalue_score" id="new_corevalue_score" action="/teams/1473/corevalue_scores" accept-charset="UTF-8" method="post">
+    <input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="authenticity_token" value="OW1ZmkQWEo21Jhb8MEIJrx5suM/+BVqQtaa2o86qNxv2xilVVpHEhT8j3MTMOXMibJOkjydK2lSPKkcAu2UUUQ=="
+    />
+
+
+    <p>Judge:
+      <input type="text" name="corevalue_score[judge_name]" id="corevalue_score_judge_name" />
+    </p>
+
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="8">
+          <div class="vertical">Inspiration</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Discovery</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Balanced emphasis on all three aspects (Robot, Project, Core Values) of FLL ; it's not just about winning awards</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[i_discovery]" id="corevalue_score_i_discovery_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[i_discovery]" id="corevalue_score_i_discovery_1" />
+          <label for="corevalue_score_i_discovery_1">emphasis on only one aspect; others neglected</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[i_discovery]" id="corevalue_score_i_discovery_2" />
+          <label for="corevalue_score_i_discovery_2">emphasis on two aspects; one aspect neglected</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[i_discovery]" id="corevalue_score_i_discovery_3" />
+          <label for="corevalue_score_i_discovery_3">emphasis on all three aspects</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[i_discovery]" id="corevalue_score_i_discovery_4" />
+          <label for="corevalue_score_i_discovery_4">balanced emphasis on all three aspects</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Team Spirit</b>
+        </td>
+        <td colspan="3">
+          <i>Enthusiastic and fun expression of the team identity</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[i_team_spirit]" id="corevalue_score_i_team_spirit_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[i_team_spirit]" id="corevalue_score_i_team_spirit_1" />
+          <label for="corevalue_score_i_team_spirit_1">minimal enthusiasm AND minimal identity</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[i_team_spirit]" id="corevalue_score_i_team_spirit_2" />
+          <label for="corevalue_score_i_team_spirit_2">minimal enthusiasm OR minimal identity</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[i_team_spirit]" id="corevalue_score_i_team_spirit_3" />
+          <label for="corevalue_score_i_team_spirit_3">team is enthusiastic and fun; clear identity</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[i_team_spirit]" id="corevalue_score_i_team_spirit_4" />
+          <label for="corevalue_score_i_team_spirit_4">team engages others in their enthusiasm and fun; clear identity</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Integration</b>
+        </td>
+        <td colspan="3">
+          <i>Application of FLL values and skills outside FLL (ability to describe current and potential examples from daily
+            life)
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[i_integration]" id="corevalue_score_i_integration_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[i_integration]" id="corevalue_score_i_integration_1" />
+          <label for="corevalue_score_i_integration_1">team does not apply FLL values and skills outside FLL</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[i_integration]" id="corevalue_score_i_integration_2" />
+          <label for="corevalue_score_i_integration_2">team able to describe at least one example</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[i_integration]" id="corevalue_score_i_integration_3" />
+          <label for="corevalue_score_i_integration_3">team able to describe multiple examples</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[i_integration]" id="corevalue_score_i_integration_4" />
+          <label for="corevalue_score_i_integration_4">team able to describe multiple, incl. individual stories</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="corevalue_score[award_inspiration]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="corevalue_score[award_inspiration]" id="corevalue_score_award_inspiration" />
+          <strong>Inspiration Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <!-- <td rowspan="7">Inspiration</td> -->
+        <td colspan="5" valign="top">
+          Comments:
+          <textarea rows="5" cols="100" name="corevalue_score[i_comments]" id="corevalue_score_i_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="7">
+          <div class="vertical">
+            Teamwork</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Effectiveness</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Problem solving and decision making processes help team achieve their goals</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[t_effectiveness]" id="corevalue_score_t_effectiveness_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[t_effectiveness]" id="corevalue_score_t_effectiveness_1" />
+          <label for="corevalue_score_t_effectiveness_1">team goals AND team processes unclear</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[t_effectiveness]" id="corevalue_score_t_effectiveness_2" />
+          <label for="corevalue_score_t_effectiveness_2">team goals OR team processes unclear</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[t_effectiveness]" id="corevalue_score_t_effectiveness_3" />
+          <label for="corevalue_score_t_effectiveness_3">clear team goals and process</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[t_effectiveness]" id="corevalue_score_t_effectiveness_4" />
+          <label for="corevalue_score_t_effectiveness_4">clear processes enable team to accomplish well defined goals</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Efficiency</b>
+        </td>
+        <td colspan="3">
+          <i>Resources used relative to what the team accomplishes (time management, distribution of roles and responsibilities)</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[t_efficiency]" id="corevalue_score_t_efficiency_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[t_efficiency]" id="corevalue_score_t_efficiency_1" />
+          <label for="corevalue_score_t_efficiency_1">limited time management AND unclear goals</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[t_efficiency]" id="corevalue_score_t_efficiency_2" />
+          <label for="corevalue_score_t_efficiency_2">limited time management OR unclear goals</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[t_efficiency]" id="corevalue_score_t_efficiency_3" />
+          <label for="corevalue_score_t_efficiency_3">excellent time management and role definition allows team to accomplish most goals</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[t_efficiency]" id="corevalue_score_t_efficiency_4" />
+          <label for="corevalue_score_t_efficiency_4">excellent time management and role definition allows teams to accomplish all goals</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Kids Do The Work</b>
+        </td>
+        <td colspan="3">
+          <i>Appropriate balance between team responsibility and coach guidance</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[t_initiative]" id="corevalue_score_t_initiative_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[t_initiative]" id="corevalue_score_t_initiative_1" />
+          <label for="corevalue_score_t_initiative_1">limited team responsibility AND excessive coach guidance</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[t_initiative]" id="corevalue_score_t_initiative_2" />
+          <label for="corevalue_score_t_initiative_2">limited team responsibility OR excessive coach guidance</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[t_initiative]" id="corevalue_score_t_initiative_3" />
+          <label for="corevalue_score_t_initiative_3">good balance between team responsibility and coach guidance</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[t_initiative]" id="corevalue_score_t_initiative_4" />
+          <label for="corevalue_score_t_initiative_4">team independence with minimum coach guidance</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="corevalue_score[award_teamwork]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="corevalue_score[award_teamwork]" id="corevalue_score_award_teamwork" />
+          <strong> Teamwork Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <!-- <td rowspan="7">Inspiration</td> -->
+        <td colspan="6">
+          Comments:
+          <textarea rows="5" cols="100" name="corevalue_score[t_comments]" id="corevalue_score_t_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <table class="grid">
+      <tr style="border: none;">
+        <td style="border: none;">
+          &nbsp;
+        </td>
+        <td>
+          <b>
+            <i>None</i>
+          </b>
+        </td>
+        <td>
+          <b>
+            <i>Beginning</i>
+          </b>
+        </td>
+        <td>
+          <i>
+            <b>Developing</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Accomplished</b>
+          </i>
+        </td>
+        <td>
+          <i>
+            <b>Exemplary</b>
+          </i>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="7" valign="bottom">
+          <div class="vertical">
+            Gracious&nbsp;Professionalism&trade;</div>
+        </td>
+        <td class="alt" colspan="2">
+          <b>Inclusion</b>
+        </td>
+        <td class="alt" colspan="3">
+          <i>Consideration and appreciation for the contributions (ideas and skills) of all team members, with balanced involvement</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[g_inclusion]" id="corevalue_score_g_inclusion_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[g_inclusion]" id="corevalue_score_g_inclusion_1" />
+          <label for="corevalue_score_g_inclusion_1">unbalanced team involvement AND lack of appreciation for contributions</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[g_inclusion]" id="corevalue_score_g_inclusion_2" />
+          <label for="corevalue_score_g_inclusion_2">unbalanced team involvement OR lack of appreciation for contributions</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[g_inclusion]" id="corevalue_score_g_inclusion_3" />
+          <label for="corevalue_score_g_inclusion_3">balanced team involvement AND appreciation for contributions of most team members</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[g_inclusion]" id="corevalue_score_g_inclusion_4" />
+          <label for="corevalue_score_g_inclusion_4">balanced team involvement AND appreciation for contributions of all team members</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Respect</b>
+        </td>
+        <td colspan="3">
+          <i>Team members act and speak with integrity and sensitivity, so that others feel valued&mdash;especially when solving
+            problmes or resolving conflicts</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[g_respect]" id="corevalue_score_g_respect_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[g_respect]" id="corevalue_score_g_respect_1" />
+          <label for="corevalue_score_g_respect_1">not evident with majority of team members</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[g_respect]" id="corevalue_score_g_respect_2" />
+          <label for="corevalue_score_g_respect_2">evident with majority of the team members</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[g_respect]" id="corevalue_score_g_respect_3" />
+          <label for="corevalue_score_g_respect_3">almost always evident with all team members</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[g_respect]" id="corevalue_score_g_respect_4" />
+          <label for="corevalue_score_g_respect_4">always evident, even in the most difficult situations</label>
+        </td>
+      </tr>
+      <tr class="alt">
+        <td colspan="2">
+          <b>Coopertition&trade;</b>
+        </td>
+        <td colspan="3">
+          <i>Team competes in the spirit of friendly competition and cooperation with others</i>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input default="default" type="radio" value="0" checked="checked" name="corevalue_score[g_coopertition]" id="corevalue_score_g_coopertition_0"
+          />
+        </td>
+        <td>
+          <input type="radio" value="1" name="corevalue_score[g_coopertition]" id="corevalue_score_g_coopertition_1" />
+          <label for="corevalue_score_g_coopertition_4">not evident with majority of team members</label>
+        </td>
+        <td>
+          <input type="radio" value="2" name="corevalue_score[g_coopertition]" id="corevalue_score_g_coopertition_2" />
+          <label for="corevalue_score_g_coopertition_4">evident with majority of team members</label>
+        </td>
+        <td>
+          <input type="radio" value="3" name="corevalue_score[g_coopertition]" id="corevalue_score_g_coopertition_3" />
+          <label for="corevalue_score_g_coopertition_4">almost always eveident with all team members</label>
+        </td>
+        <td>
+          <input type="radio" value="4" name="corevalue_score[g_coopertition]" id="corevalue_score_g_coopertition_4" />
+          <label for="corevalue_score_g_coopertition_4">always evident, even in difficult situations - and team actively helps other teams</label>
+        </td>
+      </tr>
+      <tr height="60px">
+        <td colspan="5">
+          <input name="corevalue_score[award_gracprof]" type="hidden" value="N" />
+          <input type="checkbox" value="Y" name="corevalue_score[award_gracprof]" id="corevalue_score_award_gracprof" />
+          <strong>Gracious Professionalism Award Consideration
+            <strong>
+        </td>
+      </tr>
+      <tr valign="top">
+        <!-- <td rowspan="7">Inspiration</td> -->
+        <td colspan="6">
+          Comments:
+          <textarea rows="5" cols="100" name="corevalue_score[g_comments]" id="corevalue_score_g_comments">
+</textarea>
+        </td>
+      </tr>
+    </table>
+    <input type="submit" name="commit" value="Submit" />
+  </form>
+</div>

@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 // import { Configuration } from '../app.constants';
-import { MatchScoringComponent } from './match-scoring.component';
+// import { AddMissionComponent } from './add-mission.component';
 import { environment } from 'environments/environment';
 // import { IMatchDefinition } from 'app/match/model/matchDefinition';
 import { IMission } from 'app/mission/model/mission';
 
 @Injectable()
 
-export class MatchService {
+export class MissionService {
     // private actionUrl: string;
     // private headers: Headers;
 
@@ -20,20 +20,16 @@ export class MatchService {
     constructor(private http: Http) { }
 
 
-    // Fetch all teams
-    public getMission(): Observable<IMission[]> {
-        // ...using get request
-        const comps = this.http.get(this.baseUrl)
-            // ...and calling .json() on the response to return data
-            .map((res: Response) =>
-                res.json()
-            )
-            .catch(this.handleError); // ...errors if any
-        // console.log(comps);
-        return comps;
-        // ...errors if any
-    }
 
+    saveMission(mission: IMission): Observable<IMission> {
+        const bodyString = JSON.stringify(mission); // Stringify payload
+        const headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        const options = new RequestOptions({ headers: headers }); // Create a request option
+
+        return this.http.post(this.baseUrl, bodyString, options) // ...using post request
+            .map((res: Response) => res.json())
+            .catch(this.handleError); // ...errors if any
+    }
 
 
     private handleError(error: Response): Observable<any> {

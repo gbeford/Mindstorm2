@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatchService } from './match.service';
-import { IMission } from 'app/match/model/mission';
+import { IMission } from 'app/mission/model/mission';
 import { SignatureComponent } from './signature/signature.component';
 
 @Component({
