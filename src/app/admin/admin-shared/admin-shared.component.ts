@@ -1,17 +1,21 @@
-import { Component, OnInit, Injectable, CanActivate, ActivatedRouteSnapshot } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 
 
-@Injectable
-export class AdminSharedComponent implements CanActivate {
-  userLoggedIn: boolean = false;
+// @Injectable
+ export class AdminSharedComponent implements CanActivate {
+   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+     throw new Error('Method not implemented.');
+     // const url: string = state.url
+   }
+//   userLoggedIn: boolean = false;
 
   constructor(private router: Router) { }
-  canActivate(router: ActivatedRouteSnapshot), state: RouterStateSnapshot):boolan{]
-    let url:string =state.url}
 
-  ngOnInit() {
-  }
+
+  // ngOnInit() {
+  // }
 
 }
